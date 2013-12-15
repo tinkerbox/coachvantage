@@ -1,0 +1,57 @@
+.dashboard
+	.frame_performance
+		.frame_caption_bar
+			.frame_title.pull-left
+				%p.frame_caption My Perfomance
+			.perf_disp_for.pull-right
+				%p.pull-left Display data for:
+				= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]]), class: 'pull-left cv_select'
+			.div_clear
+		%table.cv_table.perf_table
+			%tr
+				%th Revenue Collected
+				%th Forecast Revenue
+				%th Total Coaching Hours
+				%th Education Units
+			%tr
+				%td
+					%p#value 3,460
+					%p#unit USD($)
+				%td
+					%p#value 12,910
+					%p#unit USD($)
+				%td
+					%p#value 38
+					%p#unit HOURS
+				%td
+					%p#value 12
+					%p#unit UNITS
+		= link_to 'VIEW REPORTS', '#', class: 'cv_btn perf_view_report pull-right'
+		.div_clear
+	.frame_upcoming_sessions
+		.frame_caption_bar
+			.frame_title
+				%p.frame_caption Upcoming Sessions
+		%table.cv_table.us_table
+			%tr
+				%th#name Client / Group Name
+				%th#data Data / Time
+				%th#location Location
+				%th#action 
+			- 3.times do |i|
+				%tr
+					%td
+						.client_info
+							.avatar_normal.pull-left
+								%img.img_circle{src: '/assets/avatar/john.jpg'}
+							.info.pull-left
+								%div John Appleseed
+							.div_clear
+					%td 12 November 2013
+					%td 1 Infinity Loop
+					%td
+						= link_to 'LOG SESSION', '#', class: 'cv_btn us_action_log'
+						= link_to '', '#', class: 'i icon-edit'
+						= link_to '', '#', class: 'i icon-remove'
+						.div_clear
+		= link_to 'VIEW ALL SESSIONS', '#', class: 'cv_btn us_view_all pull-right'

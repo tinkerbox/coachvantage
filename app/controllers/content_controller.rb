@@ -1,5 +1,7 @@
 class ContentController < ApplicationController
   before_filter :authenticate_user!
+
+  layout 'content_layout'
   
   def silver
     authorize! :view, :silver, :message => 'Access limited to Silver Plan subscribers.'

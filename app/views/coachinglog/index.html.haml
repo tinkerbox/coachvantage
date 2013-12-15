@@ -1,0 +1,41 @@
+.coachinglog
+	.cl_action_bar
+		= link_to 'ADD NEW ENTRY', '#', class: 'cv_btn pull-left'
+		= link_to 'EXPORT DATA', '#', class: 'cv_btn pull-left'
+		.cl_action_bar_option.pull-right
+			%p.pull-left Display data from:
+			%select.pull-left
+				%option ALL TIME
+			.div_clear
+		.div_clear
+	%hr
+	%table.cv_table.client_list_table
+		%tr
+			%th#name Client / Group
+			%th#start_date Start Date
+			%th#end_date End Date
+			%th#paid_hours Paid Hours
+			%th#pro_bono_hours Pro-bono Hours
+			%th#action
+		- 6.times do
+			%tr
+				%td
+					.client_info
+						.avatar_normal.pull-left
+							%img.img_circle{src:'/assets/avatar/john.jpg'}
+						.info_email
+							%div#name John Appleseed
+							%div#email
+								%a{href:'mailto:#'} john@appleseed.com
+						.div_clear
+				%td
+					%p 12 November 2013
+				%td
+					%p 30 December 2013
+				%td
+					%p 12
+				%td
+					%p 0
+				%td
+					= link_to '', '#', class: 'i icon-edit'
+					= link_to '', '#', class: 'i icon-remove'

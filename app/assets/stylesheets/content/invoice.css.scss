@@ -1,0 +1,61 @@
+.invoice {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.invoice_action_bar {
+	margin-top: 25px;
+}
+
+.invoice_action_bar a {
+	font-size: 14px;
+}
+
+.invoice_action_bar_option {
+}
+
+.outstanding_title {
+	padding-top: 5px;
+}
+
+.paid_title {
+	padding-top: 50px;
+}
+
+.invoice hr {
+	border: 1px solid #dcdcdc;
+}
+
+.invoice_list_table {
+	margin-top: 25px;
+}
+
+.invoice_list_table tr th#name {
+	width: 25%;
+}
+
+.invoice_list_table tr th#date_sent {
+	width: 20%;
+}
+
+.invoice_list_table tr th#date_due {
+	width: 20%;
+}
+
+.invoice_list_table tr th#amount {
+	width: 20%;
+}
+
+.invoice_list_table tr {
+	border: 1px solid #eeeeee;
+}
+
+.invoice_list_table tr td {
+	border: none;
+	height: 110px;
+}
+
+.invoice_list_table tr td a {
+	font-size: 12px;
+	margin-right: 8px;
+}

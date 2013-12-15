@@ -8,15 +8,17 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    APPLICATION
-    -# application layout styled for Twitter Bootstrap 2.3
-    %header
-      = render 'layouts/navigation'
-    %main{:role => "main"}
-      .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
-          %footer
+    .panel
+      .left_panel
+        = render 'layouts/nav_menu'
+      .right_panel
+        .header-bar
+          .content_name_div
+            DASHBOARD
+          .setting_div.pull-right
+            = link_to '#', class: 'setting_text' do
+              %i.icon-wrench
+              SETTINGS
+          .div_clear
+        = yield
+      .div_clear

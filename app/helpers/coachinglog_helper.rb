@@ -1,0 +1,2 @@
+module CoachinglogHelper
+end

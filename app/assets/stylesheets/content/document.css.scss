@@ -1,0 +1,57 @@
+.document {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.doc_action_bar {
+	margin-top: 25px;
+}
+
+.doc_action_bar a {
+	font-size: 14px;
+}
+
+.doc_action_bar_option {
+}
+
+.document hr {
+	border: 1px solid #dcdcdc;
+}
+
+.doc_list_table {
+	margin-top: 25px;
+}
+
+.doc_list_table tr th#type {
+	width: 5%;
+}
+
+.doc_list_table tr th#title {
+	width: 35%;
+}
+
+.doc_list_table tr th#date_upload {
+	width: 20%;
+}
+
+.doc_list_table tr th#shared_with {
+	width: 25%;
+}
+
+.doc_list_table tr {
+	border: 1px solid #eeeeee;
+}
+
+.doc_list_table tr td {
+	border: none;
+	height: 110px;
+}
+
+.doc_list_table tr td a {
+	font-size: 12px;
+	margin-right: 8px;
+}
+
+.share_with_list {
+	display: inline-block;
+}

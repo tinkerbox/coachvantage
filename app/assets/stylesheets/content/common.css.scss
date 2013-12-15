@@ -1,0 +1,115 @@
+.cv_table {
+	text-align: center;
+	width: 100%;
+}
+
+.cv_table tr {
+	border: 1px solid #eeeeee;
+}
+
+.cv_table tr th{
+	height: 40px;
+	background-color: #0282a5;
+	font-size: 17px;
+	font-weight: normal;
+	color: #ffffff;
+	border: 1px solid #eeeeee;
+}
+
+.cv_table tr td {
+	background-color: #ffffff;
+}
+
+.cv_btn {
+	font-size: 16px;
+	color: #ffffff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-bottom: 3px solid #788e43;
+	background-color: #8cc10d;
+	padding: 10px;
+	font-weight: bold;
+}
+
+.cv_btn:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.frame_caption {
+	color: #38294a;
+	font-weight: bold;
+	font-size: 25px;
+	margin-left: 5px;
+}
+
+.client_info {
+	margin-left: 20px;
+}
+
+.img_circle {
+	border-radius: 50%;
+}
+
+.client_info .avatar_small img {
+	width: 40px;
+	height: 40px;
+}
+
+.client_info .avatar_normal img{
+	width: 90px;
+	height: 90px;
+}
+
+.client_info .avatar_large {
+	width: 150px;
+}
+
+.client_info .info {
+	padding-left: 20px;
+}
+
+.client_info .info_email {
+	padding-left: 20px;
+}
+
+.client_info .info_email #name {
+	padding-top: 15px;
+}
+
+.client_info .info_email #email {
+	padding-top: 5px;
+	font-size: 11px;
+	color: #1aa4b1;
+}
+
+.client_info .info_detail {
+	padding-left: 15px;
+}
+
+.client_info .info_detail #name {
+	padding-top: 8px;
+}
+
+.client_info .info_detail #type {
+	font-size: 10px;
+	color: #606060;
+}
+
+.client_info .info_detail #phone {
+	font-size: 12px;
+	color: #1aa4b1;
+}
+
+.client_info .info_detail #email {
+	font-size: 12px;
+	color: #1aa4b1;
+}
+
+.client_info .info_detail_large {
+}
+
+.client_info .info div {
+	margin-top: 28px;
+}

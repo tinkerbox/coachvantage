@@ -1,4 +1,30 @@
 Coachvantage::Application.routes.draw do
+  get "client/index"
+
+  get "client/new"
+
+  get "client/edit"
+
+  get "client/show"
+
+  get "invoice/edit"
+
+  get "invoice/show"
+
+  get "invoice/index"
+
+  get "invoice/new"
+
+  get "document/index"
+
+  get "coachinglog/index"
+
+  get "coachinglog/new"
+
+  get "coachinglog/edit"
+
+  get "dashboard/index"
+
   mount StripeEvent::Engine => '/stripe'
   get "content/gold"
   get "content/silver"
@@ -13,4 +39,9 @@ Coachvantage::Application.routes.draw do
     put 'update_card', :to => 'registrations#update_card'
   end
   resources :users
+  resources :dashboard
+  resources :coachinglog
+  resources :document
+  resources :invoice
+  resources :client
 end

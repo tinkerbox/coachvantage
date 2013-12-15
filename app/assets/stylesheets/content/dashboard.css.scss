@@ -1,0 +1,99 @@
+.dashboard {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.frame_performance {
+	padding-top: 50px;
+}
+
+.frame_caption_bar {
+}
+
+.frame_title {
+	margin-left: 5px;
+}
+
+.perf_disp_for {
+}
+
+.perf_table {
+	margin-top: 5px;
+}
+
+.perf_table tr th {
+	width: 25%;
+}
+
+.perf_table tr td {
+	height: 180px;
+	border: 1px solid #eeeeee;
+}
+
+.perf_table tr td p {
+	font-weight: normal;
+	color: #a5a5a5;
+}
+
+.perf_table tr td p#value {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 40px;
+	line-height: normal;
+}
+
+.perf_table tr td p#unit {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	font-size: 18px;
+	line-height: normal;
+}
+
+.perf_view_report {
+	margin-top: 20px;
+}
+
+.frame_upcoming_sessions {
+	padding-top: 40px;
+}
+
+.us_table {
+	margin-top: 25px;
+}
+
+.us_table tr {
+	border: 1px solid #eeeeee;
+}
+
+.us_table tr th#name {
+	width: 30%;
+}
+
+.us_table tr th#date {
+	width: 18%;
+}
+
+.us_table tr th#location {
+	width: 30%;
+}
+
+.us_table tr th#action {
+	width: 22%;
+}
+
+.us_table tr td {
+	border: none;
+	height: 110px;
+}
+
+.us_table tr td a {
+	margin-right: 8px;
+}
+
+.us_action_log {
+	font-size: 13px;
+}
+
+.us_view_all {
+	margin-top: 15px;
+}
