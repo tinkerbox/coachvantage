@@ -108,6 +108,27 @@
 }
 
 .client_info .info_detail_large {
+	padding-left: 15px;
+}
+
+.client_info .info_detail_large #name {
+	padding-top: 8px;
+	font-size: 18px;
+}
+
+.client_info .info_detail_large #type {
+	font-size: 13px;
+	color: #606060;
+}
+
+.client_info .info_detail_large #phone {
+	font-size: 15px;
+	color: #1aa4b1;
+}
+
+.client_info .info_detail_large #email {
+	font-size: 15px;
+	color: #1aa4b1;
 }
 
 .client_info .info div {

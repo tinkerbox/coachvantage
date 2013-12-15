@@ -1,3 +1,48 @@
-// Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.signin_legend {
+	padding: 30px;
+	text-align: center;
+	font-size: 35px;
+	font-weight: normal;
+	color: #606060;
+	line-height: normal;
+}
+
+.vertical_hr {
+	width: 1px;
+	height: 100%;
+	background-color: #cfcfcf;
+	border: 1 solid #cfcfcf;
+}
+
+.signin_input {
+	-moz-box-sizing:    border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing:         border-box;
+	border-right: 1px solid #cfcfcf;
+	padding-top: 15px;
+}
+
+.singin_input_right {
+	padding-right: 40px;
+}
+
+.input_style {
+	border: 1px solid #dcdcdc;
+	width: 320px;
+	height: 50px;
+	background-color : white;
+}
+
+.signin_other {
+	padding-top: 5px;
+}
+
+.signin_other a {
+	margin: 10px;
+}
+
+.signin_link {
+	font-size: 12px;
+	color: #bebebe;
+	text-decoration: underline;
+}

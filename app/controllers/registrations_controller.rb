@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def new
     @plan = params[:plan]
-    if @plan && %w[admin silver gold platinum].include?(@plan) && @plan != "admin"
+    if @plan && %w[admin clarity aha team].include?(@plan) && @plan != "admin"
       super
     else
       redirect_to root_path, :notice => 'Please select a subscription plan below.'

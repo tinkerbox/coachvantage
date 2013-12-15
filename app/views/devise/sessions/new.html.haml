@@ -1,7 +1,18 @@
-%h2 Sign in
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f|
-  = f.input :email, :autofocus => true
-  = f.input :password
-  = f.input :remember_me, :as => :boolean if devise_mapping.rememberable?
-  = f.button :submit, "Sign in", :class => 'btn-primary'
-= render "devise/shared/links"
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
+	.row-fluid
+		.span12
+			.signin_legend COACHVANTAGE
+			.span6.signin_input
+				.pull-right.singin_input_right
+					= f.input :name, :label => 'USERNAME', :autofocus =>true
+					= f.input :password, :label => 'PASSWORD'
+					= f.input :remember_me, :label => 'REMEMBER ME', :wrapper_html => {:class => 'pull-left'}, :as => :boolean if devise_mapping.rememberable?
+					= f.button :submit, "LOGIN", :class => 'btn-primary pull-right'
+			.span5.signin_other
+				= link_to 'Login with Facebook', '#', class: 'btn btn-primary'
+				.div_clear
+				= link_to 'Sign in with Google', '#', class: 'btn btn-danger'
+		.span12
+			.span2
+			.span10
+				= render "devise/shared/links"

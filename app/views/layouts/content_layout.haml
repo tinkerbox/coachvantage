@@ -16,7 +16,7 @@
           .content_name_div
             DASHBOARD
           .setting_div.pull-right
-            = link_to '#', class: 'setting_text' do
+            = link_to 'users/sign_out', method: :delete, class: 'setting_text' do
               %i.icon-wrench
               SETTINGS
           .div_clear

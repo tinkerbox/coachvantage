@@ -1,25 +1,24 @@
 #welcome.hero-unit.span7
   %h1 CoachVantage Site
-  / %h3 Learn to build a successful subscription site.
 .row.span8.plans
   .span2.well
     .plan
-      %h2 Silver
+      %h2 Clarity
     %ul.unstyled
-      %li One lesson a month
+      %li Only 100 sessions.
     %h3 $9/month
-    = link_to 'Subscribe', new_user_registration_path(:plan => 'silver'), :class => 'btn btn-primary'
+    = link_to 'Subscribe', new_user_registration_path(:plan => 'clarity'), :class => 'btn btn-primary'
   .span2.well.featured
     .plan.featured-plan
-      %h2 Gold
+      %h2 Aha
     %ul.unstyled
-      %li Ten lessons a month
+      %li Unlimited sessions.
     %h3 $19/month
-    = link_to 'Subscribe', new_user_registration_path(:plan => 'gold'), :class => 'btn btn-primary'
+    = link_to 'Subscribe', new_user_registration_path(:plan => 'aha'), :class => 'btn btn-primary'
   .span2.well
     .plan
-      %h2 Platinum
+      %h2 Team
     %ul.unstyled
-      %li Thirty lessons a month
+      %li Unlimited team sessions.
     %h3 $29/month
-    = link_to 'Subscribe', new_user_registration_path(:plan => 'platinum'), :class => 'btn btn-primary'
+    = link_to 'Subscribe', new_user_registration_path(:plan => 'team'), :class => 'btn btn-primary'
