@@ -30,7 +30,7 @@ Coachvantage::Application.routes.draw do
   get "content/silver"
   get "content/platinum"
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'home#dashboard'
   end
   root :to => "home#index"
   devise_for :users, :controllers => { :registrations => 'registrations' }
