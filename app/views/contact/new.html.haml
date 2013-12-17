@@ -1,0 +1,16 @@
+.new_contact
+	.frame_caption Add new contact
+	= simple_form_for(:user, :url => new_contact_path, :html => {:method => :post, :class => 'form-horizontal' }) do |f|
+		.row-fluid
+			.span12
+			.span12
+				= f.input :name, :label => 'USERNAME', :autofocus => true
+				= f.input :birthday, :label => 'BIRTHDAY', as: :date, start_year: Date.today.year - 5, end_year: Date.today.year - 90, order: [:day, :month, :year]
+				= f.input :sex, :label => 'SEX', as: :select, collection: ['Male', 'Female']
+				= f.input :email, :label => 'EMAIL'
+				= f.input :tel, :label => 'TELEPHONE'
+				= f.input :skype_id, :label => 'SKYPE ID'
+			.span12
+				.span2
+				.span10
+					= f.button :submit, "LOGIN"

@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %title= content_for?(:title) ? yield(:title) : 'Coachvantage'
+    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Coachvantage'}"}
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  %body
+    .panel
+      .left_panel
+        = render 'layouts/nav_menu'
+      .right_panel
+        .header-bar
+          .content_name_div
+            DASHBOARD
+          .setting_div.pull-right
+            = link_to 'users/sign_out', method: :delete, class: 'setting_text' do
+              %i.icon-wrench
+              SETTINGS
+          .div_clear
+        = yield
+      .div_clear

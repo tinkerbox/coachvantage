@@ -26,7 +26,7 @@
 				%td
 					%p#value 12
 					%p#unit UNITS
-		= link_to 'VIEW REPORTS', '#', class: 'cv_btn perf_view_report pull-right'
+		= link_to 'VIEW REPORTS', 'report#index', class: 'cv_btn perf_view_report pull-right'
 		.div_clear
 	.frame_upcoming_sessions
 		.frame_caption_bar
@@ -35,7 +35,7 @@
 		%table.cv_table.us_table
 			%tr
 				%th#name Client / Group Name
-				%th#data Data / Time
+				%th#data Date / Time
 				%th#location Location
 				%th#action 
 			- 3.times do |i|

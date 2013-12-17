@@ -1,0 +1,31 @@
+.contact
+	.contact_action_bar
+		= link_to 'ADD NEW CONTACT', new_contact_url, class: 'cv_btn pull-left'
+		.contact_action_bar_option.pull-right
+			%p.pull-left Display data from:
+			%select.pull-left
+				%option ALL TIME
+			.div_clear
+		.div_clear
+	%hr
+	.contact_caption
+		.frame_caption.pull-left All Contacts
+		.pull-right
+			.disp_opt_caption.pull-left Displaying:
+			= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]]), class: 'pull-left cv_select'
+		.div_clear
+	.contact_list
+		- 15.times do
+			.client_info.contact_info_panel.pull-left
+				.avatar_normal.pull-left
+					%img.img_circle{src: '/assets/avatar/john.jpg'}
+				.info_detail.pull-left
+					%div#name Trevor J.Holden
+					%div#type Individual client
+					%div#phone +65 9625 2358
+					%a{href: 'mailto:#'}
+						#div#email trevorholden@gmail.com
+				.contact_info_expand.pull-left
+					%img{src: '/assets/expand.png'}
+				.div_clear
+		.div_clear

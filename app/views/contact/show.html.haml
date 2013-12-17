@@ -1,0 +1,12 @@
+.contact_profile
+	%div
+		.client_info
+			.avatar_large.pull-left
+				%img.img_circle{src: '/assets/avatar/john.jpg'}
+			.info_detail_large.pull-left
+				%div#name Trevor J.Holden
+				%div#type Individual client
+				%div#phone +65 9625 2358
+				%a{href: 'mailto:#'}
+					#div#email trevorholden@gmail.com
+		= link_to 'START SESSION', '#', class: 'cv_btn pull-right', id: 'start_session'

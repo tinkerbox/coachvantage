@@ -16,10 +16,10 @@ puts 'DEFAULT USERS'
 user = User.find_or_create_by_email :name => "Admin", :email => "admin@coachvantage.com", :password => "changeme", :password_confirmation => "changeme"
 puts 'user: ' << user.name
 user.add_role :admin
-user2 = User.find_or_create_by_email :name => 'Clarity User', :email => 'clarity@coachvantage.com', :password => 'changeme', :password_confirmation => 'changeme'
+user2 = User.find_or_create_by_email :name => 'ClarityUser', :email => 'clarity@coachvantage.com', :password => 'changeme', :password_confirmation => 'changeme'
 user2.add_role :clarity
-user3 = User.find_or_create_by_email :name => 'Aha User', :email => 'aha@coachvantage.com', :password => 'changeme', :password_confirmation => 'changeme'
+user3 = User.find_or_create_by_email :name => 'AhaUser', :email => 'aha@coachvantage.com', :password => 'changeme', :password_confirmation => 'changeme'
 user3.add_role :aha
-user4 = User.find_or_create_by_email :name => 'Team User', :email => 'team@example.com', :password => 'changeme', :password_confirmation => 'changeme'
+user4 = User.find_or_create_by_email :name => 'TeamUser', :email => 'team@coachvantage.com', :password => 'changeme', :password_confirmation => 'changeme'
 user4.add_role :team
 puts "users: #{user2.name}, #{user3.name}, #{user4.name}"

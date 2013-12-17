@@ -7,7 +7,7 @@
 					= f.input :name, :label => 'USERNAME', :autofocus =>true
 					= f.input :password, :label => 'PASSWORD'
 					= f.input :remember_me, :label => 'REMEMBER ME', :wrapper_html => {:class => 'pull-left'}, :as => :boolean if devise_mapping.rememberable?
-					= f.button :submit, "LOGIN", :class => 'btn-primary pull-right'
+					= f.button :submit, "LOGIN", :class => ' pull-right'
 			.span5.signin_other
 				= link_to 'Login with Facebook', '#', class: 'btn btn-primary'
 				.div_clear

@@ -17,5 +17,7 @@ Coachvantage::Application.routes.draw do
   resources :coachinglog
   resources :document
   resources :invoice
-  resources :client
+  resources :contact
+  resources :schedule
+  resources :report
 end

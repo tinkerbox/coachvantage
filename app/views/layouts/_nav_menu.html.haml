@@ -1,33 +1,33 @@
 .nav_side_bar
-  %ul.nav.nav-list
+  %ul#left_nav_menu.nav.nav-list
     %li
       %a
         %p COACHVANTAGE
-    %li
-      %a
-        %i.icon-home.icon-white
+    %li{class: "#{leftbar_class('dashboard')}"}
+      %a{href: '/dashboard'}
+        %img.nav_image{src: '/assets/dashboard.PNG'}
         %p Dashboard
-    %li
-      %a
-        %i.icon-calendar.icon-white
+    %li{class: "#{leftbar_class('schedule')}"}
+      %a{href: '/schedule'}
+        %img.nav_image{src: '/assets/schedule.PNG'}
         %p Schedule
-    %li
-      %a
-        %i.icon-user.icon-white
-        %p Clients
-    %li
-      %a
-        %i.icon-envelope.icon-white
+    %li{class: "#{leftbar_class('contact')}"}
+      %a{href: '/contact'}
+        %img.nav_image{src: '/assets/contact.PNG'}
+        %p Contacts
+    %li{class: "#{leftbar_class('invoice')}"}
+      %a{href: '/invoice'}
+        %img.nav_image{src: '/assets/invoice.PNG'}
         %p Invoices
-    %li
-      %a
-        %i.icon-list.icon-white
+    %li{class: "#{leftbar_class('coachinglog')}"}
+      %a{href: '/coachinglog'}
+        %img.nav_image{src: '/assets/coachinglog.PNG'}
         %p Coaching Log
-    %li
-      %a
-        %i.icon-file.icon-white
+    %li{class: "#{leftbar_class('document')}"}
+      %a{href: '/document'}
+        %img.nav_image{src: '/assets/document.PNG'}
         %p Documents
-    %li
-      %a
-        %i.icon-signal.icon-white
+    %li{class: "#{leftbar_class('report')}"}
+      %a{href: '/report'}
+        %img.nav_image{src: '/assets/report.PNG'}
         %p Reports

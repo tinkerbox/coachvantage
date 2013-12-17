@@ -33,6 +33,14 @@
 }
 
 .cv_btn:hover {
+	background-color: #a1d428;
+}
+
+.cv_btn:active {
+	background-color: #7ea81b;
+}
+
+.cv_btn:hover {
 	text-decoration: none;
 	color: white;
 }
@@ -64,6 +72,7 @@
 
 .client_info .avatar_large {
 	width: 150px;
+	height: 150px;
 }
 
 .client_info .info {
@@ -108,26 +117,31 @@
 }
 
 .client_info .info_detail_large {
-	padding-left: 15px;
+	padding-left: 30px;
 }
 
 .client_info .info_detail_large #name {
-	padding-top: 8px;
-	font-size: 18px;
+	line-height: normal;
+	padding-top: 5px;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 .client_info .info_detail_large #type {
-	font-size: 13px;
+	padding-top: 10px;
+	font-size: 18px;
 	color: #606060;
 }
 
 .client_info .info_detail_large #phone {
-	font-size: 15px;
+	font-size: 24px;
+	padding-top: 20px;
 	color: #1aa4b1;
 }
 
 .client_info .info_detail_large #email {
-	font-size: 15px;
+	padding-top: 10px;
+	font-size: 24px;
 	color: #1aa4b1;
 }
 
