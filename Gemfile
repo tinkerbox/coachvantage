@@ -21,6 +21,7 @@ gem 'stripe_event'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 gem 'pg'
+gem 'font-awesome-rails'
 group :development do
   gem 'sqlite3'
   gem 'better_errors'

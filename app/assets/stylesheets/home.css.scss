@@ -32,14 +32,22 @@ body {
 }
 
 .input_style {
-	border: 1px solid #dcdcdc;
-	width: 320px;
+	border-radius: 0px;
+	width: 250px;
 	height: 50px;
-	background-color : white;
 }
 
 .signin_other {
 	padding-top: 5px;
+}
+
+.signin_other a {
+	width: 180px;
+}
+
+.signin_fb_caption {
+	font-weight: bold;
+	margin-top: 4px;
 }
 
 .signin_other a {

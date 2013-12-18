@@ -4,14 +4,20 @@
 			.signin_legend COACHVANTAGE
 			.span6.signin_input
 				.pull-right.singin_input_right
-					= f.input :name, :label => 'USERNAME', :autofocus =>true
-					= f.input :password, :label => 'PASSWORD'
+					= f.input :name, :label => 'USERNAME', :input_html => {:class => 'input_style'}, :autofocus =>true
+					= f.input :password, :label => 'PASSWORD', :input_html => {:class => 'input_style'}
 					= f.input :remember_me, :label => 'REMEMBER ME', :wrapper_html => {:class => 'pull-left'}, :as => :boolean if devise_mapping.rememberable?
-					= f.button :submit, "LOGIN", :class => ' pull-right'
+					= f.button :submit, "LOGIN", :class => 'cv_signin_btn pull-right'
 			.span5.signin_other
-				= link_to 'Login with Facebook', '#', class: 'btn btn-primary'
+				= link_to('#', class: 'btn btn-primary') do
+					%i.fa.fa-facebook-square.fa-2x.pull-left
+					.signin_fb_caption.pull-left Login with Facebook
+					.div_clear
 				.div_clear
-				= link_to 'Sign in with Google', '#', class: 'btn btn-danger'
+				= link_to('#', class: 'btn btn-danger') do
+					%i.fa.fa-google-plus.fa-2x.pull-left
+					.signin_fp_caption.pull-right Sign in with Google
+					.div_clear
 		.span12
 			.span2
 			.span10
