@@ -1,107 +1,83 @@
-* {
-	font-family: Arial;
-	margin: 0 0 0 0;
-	padding: 0 0 0 0;
+#main {
+	margin: 0px;
 }
 
-.div_clear {
-	clear: both;
-}
-
-html body {
-	background-color: #eeeeee;
-}
-
-.panel {
-	overflow: hidden;
-	width: 100%;
-	height: 100%;
-	margin-top: 0;
-}
-
-.left_panel {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 160px;
-	z-index: 0;
-	margin-top: 0;
-	text-align: center;
-}
-
-.nav_side_bar {
+#nav_header {
 	background-color: #00a1cb;
-	padding: 0 0 0 0;
 }
 
-.nav_side_bar > ul > li > a {
-	height: 131px;
+.navbar-collapse.in {
+	overflow-y: none;
+}
+
+#sidebar {
+	background-color: #00a1cb;
+	top: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+#sidebar ul {
+	padding-left: 0px;
+}
+
+#sidebar ul li {
+	list-style: none;
+	text-align: center;
 	border-bottom: 1px solid #14add6;
-	text-align: center;
+	color: white;
 }
 
-.nav_image {
-	width: 48px;
-	height: 48px;
-}
-
-.nav_side_bar > ul > li > a > img {
-	margin-top: 24px;
-}
-
-.nav_side_bar > ul > li > a > p {
-	margin-top: 10px;
-	font-size: 15px;
-	color: #ffffff;
-}
-
-.nav_side_bar > ul > li > a:hover {
-	background-color : #28bce3;
-}
-
-.nav_side_bar > ul > li > a:active {
-	background-color: #0283a5;
-}
-
-.nav_side_bar > ul > li:first-child > a {
-	height: 53px;
-}
-
-.nav_side_bar > ul > li:first-child > a:hover {
-	background-color: #00a1cb;
-}
-
-.nav_side_bar > ul > li:first-child > a > p {
-	margin-top: 18px;
-}
-
-.right_panel {
-	margin-left: 160px;
-	height: 100%;
+#sidebar ul li:first-child h5 {
+	display: block;
 	position: relative;
-	z-index: 1;
-	overflow-x: hidden;
+	padding: 10px;
 }
 
-.header-bar {
-	height: 60px;
+#sidebar ul li a {
+	border: none;
+	display: block;
+	position: relative;
+	padding: 30px 15px 20px 15px;
+	color: white;
+	background-color: #00a1cb;
+	border-radius: 0px;
 }
 
-.content_name_div {
-	float: left;
-	margin-top: 25px;
-	margin-left: 20px;
-	color: #38294a;
-}
-
-.setting_div {
-	margin-top: 25px;
-	margin-right: 10px;
-	float: left;
-}
-
-.setting_text {
+#sidebar ul li a:hover {
 	text-decoration: none;
-	color: #a0a0a0
+	background-color: #28bce3;
+	color: white;
+}
+
+#sidebar ul li a:active {
+	background-color: #0283a5;
+	color: white;
+}
+
+#content_page {
+	margin-right: 15px;
+}
+
+.content_header {
+	margin-top: 10px;
+	height: 40px;
+}
+
+.content_header h5 {
+	color: #54426a;
+}
+
+.content_header h5 a {
+	color: #9f9f9f;
+}
+
+.content_header h5 a:hover {
+	text-decoration: none;
+}
+
+.content_yield {
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-right: 20px;
 }

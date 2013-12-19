@@ -1,24 +1,29 @@
 !!!
 %html
-  %head
-    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
-    %title= content_for?(:title) ? yield(:title) : 'Coachvantage'
-    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Coachvantage'}"}
-    = stylesheet_link_tag "application", media: "all"
-    = javascript_include_tag "application"
-    = csrf_meta_tags
-  %body
-    .panel
-      .left_panel
-        = render 'layouts/nav_menu'
-      .right_panel
-        .header-dbar
-          .content_name_div
-            DASHBOARD
-          .setting_div.pull-right
-            = link_to '#', method: :delete, class: 'setting_text' do
-              %i.icon-wrench
-              SETTINGS
-          .div_clear
-        = yield
-      .div_clear
+	%head
+		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+		%title= content_for?(:title) ? yield(:title) : 'Coachvantage'
+		%meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Coachvantage'}"}
+		= stylesheet_link_tag "application", media: "all"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+	%body
+		.navbar-header
+			.navbar.navbar-invers.navbar-fixed-top.visible-xs.visible-sm.visible-md#nav_header
+				%button{class: 'navbar-toggle pull-left', type: 'button', 'data-toggle' => 'collapse', 'data-target' =>'.sidebar_collapse'}
+					%span{class: 'sr-only'} Toggle navigation
+					%span{class: 'i fa fa-bars'}
+				= link_to 'COACHVANTAGE', '#', class: 'navbar-brand'
+		.row#main
+			#sidebar.col-lg-2.col-md-2.col-sm-3.col-xs-4.collapse.navbar-collapse.sidebar_collapse
+				= render 'layouts/side_navbar'
+			.col-lg-10.col-md-10.col-sm-9.col-xs-8#content_page
+				.content_header
+					%h5.pull-left.visible-md.visible-lg
+						= yield(:content_name)
+					%h5.pull-right
+						= link_to 'users/sign_out', method: :delete do
+							%i.fa.fa-cog
+							SETTINGS
+				.content_yield
+					= yield

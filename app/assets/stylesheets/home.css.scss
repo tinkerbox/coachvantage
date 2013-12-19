@@ -1,6 +1,7 @@
 body {
   font-family: 'Sans', serif;
   font-size: 15px;
+	background-color: #eeeeee;
 }
 
 .signin_legend {
@@ -46,6 +47,11 @@ body {
 }
 
 .signin_fb_caption {
+	font-weight: bold;
+	margin-top: 4px;
+}
+
+.signin_google_caption {
 	font-weight: bold;
 	margin-top: 4px;
 }

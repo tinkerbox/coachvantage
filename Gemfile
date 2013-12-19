@@ -8,12 +8,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 2.3.2.2'
 gem 'cancan'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
 gem 'font-awesome-sass'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'rolify'
 gem 'simple_form'
 gem 'stripe'

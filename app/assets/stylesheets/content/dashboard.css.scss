@@ -1,36 +1,27 @@
-.dashboard {
-	padding-left: 50px;
-	padding-right: 50px;
+.select_option {
+	margin-top: 10px;
 }
 
-.frame_performance {
-	padding-top: 50px;
-}
-
-.frame_caption_bar {
-}
-
-.frame_title {
-	margin-left: 5px;
-}
-
-.perf_disp_for {
+.perf_option .label {
+	color: #8e8e8e;
+	font-weight: normal;
 }
 
 .perf_table {
-	margin-top: 5px;
+	margin-top: 20px;
 }
 
 .perf_table tr th {
-	width: 25%;
+	text-align: center;
 }
 
 .perf_table tr td {
 	height: 180px;
 	border: 1px solid #eeeeee;
+	text-align: center;
 }
 
-.perf_table tr td p {
+.perf_table tr td {
 	font-weight: normal;
 	color: #a5a5a5;
 }
@@ -65,20 +56,8 @@
 	border: 1px solid #eeeeee;
 }
 
-.us_table tr th#name {
-	width: 30%;
-}
-
-.us_table tr th#date {
-	width: 18%;
-}
-
-.us_table tr th#location {
-	width: 30%;
-}
-
-.us_table tr th#action {
-	width: 22%;
+.us_table tr th {
+	text-align: center;
 }
 
 .us_table tr td {
