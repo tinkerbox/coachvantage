@@ -1,5 +1,11 @@
-.select_option {
-	margin-top: 10px;
+.perf_board {
+	margin: 10px 0px;
+	padding: 0px !important;
+	border-right: 1px solid #eee;
+	text-align: center;
+}
+
+.perf_board#pb_caption {
 }
 
 .perf_option .label {
@@ -7,45 +13,12 @@
 	font-weight: normal;
 }
 
-.perf_table {
-	margin-top: 20px;
-}
-
-.perf_table tr th {
-	text-align: center;
-}
-
-.perf_table tr td {
-	height: 180px;
-	border: 1px solid #eeeeee;
-	text-align: center;
-}
-
-.perf_table tr td {
-	font-weight: normal;
-	color: #a5a5a5;
-}
-
-.perf_table tr td p#value {
-	padding-top: 6px;
-	padding-bottom: 6px;
-	font-size: 40px;
-	line-height: normal;
-}
-
-.perf_table tr td p#unit {
-	padding-top: 6px;
-	padding-bottom: 6px;
-	font-size: 18px;
-	line-height: normal;
-}
-
 .perf_view_report {
 	margin-top: 20px;
 }
 
 .frame_upcoming_sessions {
-	padding-top: 40px;
+	margin-top: 40px;
 }
 
 .us_table {
@@ -63,10 +36,17 @@
 .us_table tr td {
 	border: none;
 	height: 110px;
+	color: #3a2a4d;
+	vertical-align: middle !important;
 }
 
-.us_table tr td a {
-	margin-right: 8px;
+.us_table tr td #log {
+	margin-left: 20px;
+}
+
+.us_table tr td #record, #edit, #delete {
+	margin-top: 12px;
+	margin-left: 8px;
 }
 
 .us_action_log {

@@ -12,8 +12,6 @@ gem 'cancan'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
-gem 'font-awesome-sass'
-gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'rolify'
 gem 'simple_form'
 gem 'stripe'
@@ -21,7 +19,7 @@ gem 'stripe_event'
 gem 'therubyracer', :platform=>:ruby
 gem 'thin'
 gem 'pg'
-gem 'font-awesome-rails'
+gem "font-awesome-rails"
 group :development do
   gem 'sqlite3'
   gem 'better_errors'

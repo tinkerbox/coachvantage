@@ -1,0 +1,82 @@
+@import "variable";
+
+
+// Device : Phone
+@media (max-width: $screen-xs-max) {
+	.show_navbar {
+		margin-left: 160px;
+		padding-left: 0px;
+	}
+
+	.frame_caption {
+		font-size: 18px;
+	}
+
+	.sub_caption {
+		font-size: 12px;
+		padding: 8px 0px;
+	}
+
+	.sub_content #value {
+		padding-top: 10px;
+		font-size: 25px;
+	}
+
+	.sub_content #unit {
+		margin-top: 5px;
+		padding-bottom: 10px;
+		font-size: 13px;
+	}
+
+	.perf_board {
+		margin: 5px 0px;
+	}
+
+	.perf_view_report {
+		margin-top: 10px;
+	}
+
+	.frame_upcoming_sessions {
+		margin-top: 20px;
+	}
+
+	.cv_btn {
+		font-size: 10px
+	}
+
+	.client_info .avatar_normal img {
+		width: 50px;
+		height: 50px;
+		margin-left: 45px;
+	}
+
+	.client_info .info div {
+		margin-top: 5px;
+	}
+}
+
+@media (min-width: $screen-sm-min) {
+	.show_navbar {
+		margin-left: 160px;
+		padding-left: 0px;
+	}
+
+	.client_info {
+		min-width: 230px;
+	}
+	.client_info .avatar_normal img {
+		width: 70px;
+		height: 70px;
+	}
+}
+
+@media (min-width: $screen-md-min) {
+	.show_navbar {
+		padding-left: 160px;
+		margin-left: 0px;
+	}
+}
+
+@media (min-width: $screen-lg-min) {
+
+}

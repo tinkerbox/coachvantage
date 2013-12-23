@@ -1,59 +1,61 @@
 = provide(:content_name, 'DASHBOARD')
 
-.col-md-12
+.row
 	.frame_caption.pull-left My Performance
 	.select_option.pull-right
-		.label Display data for: 
+		.label Display data for:
 		= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]])
-.col-md-12
-	%table.cv_table.perf_table
-		%tr
-			%th.col-md-3
-				%h4 Revenue Collected
-			%th.col-md-3
-				%h4 Forecast Revenue
-			%th.col-md-3
-				%h4 Total Coaching Hours
-			%th.col-md-3
-				%h4 Education Units
-		%tr
-			%td
-				%p#value 3,460
-				%p#unit USD($)
-			%td
-				%p#value 12,910
-				%p#unit USD($)
-			%td
-				%p#value 38
-				%p#unit HOURS
-			%td
-				%p#value 12
-				%p#unit UNITS
-.col-md-12
+.row
+	.col-xs-6.col-sm-6.col-md-3.perf_board
+		.sub_caption Revenue Collected
+		.sub_content
+			#value 3,460
+			#unit USD($)
+	.col-xs-6.col-sm-6.col-md-3.perf_board
+		.sub_caption Forecast Revenue
+		.sub_content
+			#value 12,910
+			#unit USD($)
+	.col-xs-6.col-sm-6.col-md-3.perf_board
+		.sub_caption Total Coaching Hours
+		.sub_content
+			#value 38
+			#unit HOURS
+	.col-xs-6.col-sm-6.col-md-3.perf_board
+		.sub_caption Education Units
+		.sub_content
+			#value 12
+			#unit UNITS
+.row
 	= link_to 'VIEW REPORTS', 'report#index', class: 'cv_btn perf_view_report pull-right'
-	
-.col-md-12.frame_upcoming_sessions
+
+.row.frame_upcoming_sessions
 	.frame_caption.pull-left Upcoming Sessions
-.col-md-12
-	%table.cv_table.us_table
-		%tr
-			%th.col-md-3 Client / Group Name
-			%th.col-md-3 Date / Time
-			%th.col-md-3 Location
-			%th.col-md-3 
-		- 3.times do |i|
-			%tr
-				%td
-					.col-md-12.client_info
-						.col-md-5.avatar_normal
-							%img.img_circle{src: '/assets/avatar/john.jpg'}
-						.col-md-7.info
-							%div John Appleseed
-				%td 12 November 2013
-				%td 1 Infinity Loop
-				%td
-					= link_to 'LOG SESSION', '#', class: 'cv_btn us_action_log'
-					= link_to '', '#', class: 'i fa fa-edit'
-					= link_to '', '#', class: 'i fa fa-times'
-.col-md-12
+.row
+	.table-responsive
+		%table.cv_table.table.us_table
+			%thead
+				%tr
+					%th Client / Group Name
+					%th Date / Time
+					%th Location
+					%th
+			%tbody
+				- 3.times do |i|
+					%tr
+						%td
+							.client_info
+								.avatar_normal.pull-left
+									%img.img_circle{src: '/assets/avatar/john.jpg'}
+								.info.pull-left
+									%div John Appleseed
+						%td 12 November 2013
+						%td 84 Riverina View, Pasir Ris.
+						%td
+							= link_to 'LOG SESSION', '#', class: 'cv_btn us_action_log cv_td_action_pos hidden-xs', id: 'log'
+							= link_to '', '#', class: 'i fa fa-circle cv_td_action_pos visible-xs', id: 'record'
+							= link_to '', '#', class: 'i fa fa-edit cv_td_action_pos', id: 'edit'
+							= link_to '', '#', class: 'i fa fa-times cv_td_action_pos', id: 'delete'
+							.div_clear
+.row
 	= link_to 'VIEW ALL SESSIONS', '#', class: 'cv_btn us_view_all pull-right'

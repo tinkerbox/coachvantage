@@ -1,3 +1,5 @@
+@import "table";
+
 .select_option {
 	margin-top: 3px;
 }
@@ -25,6 +27,31 @@
 	height: 22px;
 }
 
+.sub_caption {
+	font-size: 16px;
+	color: white;
+	margin: 0px;
+	padding: 10px 0px;
+	background-color: #0282a5;
+}
+
+.sub_content {
+	background-color: white;
+}
+
+.sub_content #value {
+	padding-top: 30px;
+	font-size: 40px;
+	color: #7f7f7f;
+}
+
+.sub_content #unit {
+	margin-top: 12px;
+	padding-bottom: 30px;
+	font-size: 19px;
+	color: #7f7f7f;
+}
+
 .cv_table {
 	text-align: center;
 	width: 100%;
@@ -37,7 +64,7 @@
 .cv_table tr th{
 	height: 40px;
 	background-color: #0282a5;
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: normal;
 	color: #ffffff;
 	border: 1px solid #eeeeee;
@@ -45,6 +72,10 @@
 
 .cv_table tr td {
 	background-color: #ffffff;
+}
+
+.cv_td_action_pos {
+	float: left;
 }
 
 .cv_btn {
@@ -104,7 +135,7 @@
 }
 
 .client_info {
-	min-width: 300px;
+	margin-left: 20px;
 }
 
 .img_circle {
@@ -116,18 +147,19 @@
 	height: 40px;
 }
 
-.client_info .avatar_normal img{
+.client_info .avatar_normal img {
 	width: 90px;
 	height: 90px;
 }
 
-.client_info .avatar_large {
+.client_info .avatar_large img {
 	width: 150px;
 	height: 150px;
 }
 
 .client_info .info,.info_email,.info_detail {
 	text-align: left;
+	padding-left: 15px;
 }
 
 .client_info .info_email #name {
@@ -135,7 +167,7 @@
 }
 
 .client_info .info_email #email {
-	padding-top: 5px;
+	padding-top: 5p	x;
 	font-size: 11px;
 	color: #1aa4b1;
 }
