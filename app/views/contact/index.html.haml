@@ -27,24 +27,24 @@
 							#div#email trevorholden@gmail.com
 					.contact_info_expand.pull-left
 						%i.fa.fa-chevron-right
-#new_contact_modal.modal.fade.new_contact
-	= simple_form_for(:user, :url => new_contact_path, :html => {:method => :post, :class => 'form-horizontal' }) do |f|
-		.modal-header
-			%a.close{"data-dismiss" => "modal"} ×
-			.frame_caption Add new contact
-		.modal-body
-			= f.input :salutation, :label => 'NAME', as: :select, collection: ['Mr', 'Ms', 'Mrs', 'Dr', 'Prof'], :autofocus => true
-			= f.input :first_name, :label => '-', :placeholder => 'First Name'
-			= f.input :last_name, :label => '-', :placeholder => 'Last Name'
-			= f.input :birthday, :label => 'BIRTHDAY', as: :date, start_year: Date.today.year - 5, end_year: Date.today.year - 90, order: [:day, :month, :year]
-			= f.input :address, :label => 'ADDRESS', :placeholder => 'Home Address'
-			= f.input :phone, :label => 'PHONE NUMBER', :placeholder => 'Phone Number'
-			= f.input :email, :label => 'EMAIL', :placeholder => 'coach@coachvantage.com'
-			= f.input :skype_id, :label => 'SKYPE ID'
-			= f.input :biz_title, :label => 'BUSSINESS TITLE'
-			= f.input :company_name, :label => 'COMPANY NAME'
-			= f.input :company_addr, :label => 'COMPANY ADDRESS'
-			= f.input :interests, :label => 'PERSONAL INTERESTS'
-		.modal-footer
-			= f.button :submit, "CREATE", class: 'cv_btn'
-			= link_to 'CLOSE', '#', 'data-dismiss' => 'modal', class: 'cv_btn'
+/ #new_contact_modal.modal.fade.new_contact
+/ 	= simple_form_for(:user, :url => new_contact_path, :html => {:method => :post, :class => 'form-horizontal' }) do |f|
+/ 		.modal-header
+/ 			%a.close{"data-dismiss" => "modal"} ×
+/ 			.frame_caption Add new contact
+/ 		.modal-body
+/ 			= f.input :salutation, :label => 'NAME', as: :select, collection: ['Mr', 'Ms', 'Mrs', 'Dr', 'Prof'], :autofocus => true
+/ 			= f.input :first_name, :label => '-', :placeholder => 'First Name'
+/ 			= f.input :last_name, :label => '-', :placeholder => 'Last Name'
+/ 			= f.input :birthday, :label => 'BIRTHDAY', as: :date, start_year: Date.today.year - 5, end_year: Date.today.year - 90, order: [:day, :month, :year]
+/ 			= f.input :address, :label => 'ADDRESS', :placeholder => 'Home Address'
+/ 			= f.input :phone, :label => 'PHONE NUMBER', :placeholder => 'Phone Number'
+/ 			= f.input :email, :label => 'EMAIL', :placeholder => 'coach@coachvantage.com'
+/ 			= f.input :skype_id, :label => 'SKYPE ID'
+/ 			= f.input :biz_title, :label => 'BUSSINESS TITLE'
+/ 			= f.input :company_name, :label => 'COMPANY NAME'
+/ 			= f.input :company_addr, :label => 'COMPANY ADDRESS'
+/ 			= f.input :interests, :label => 'PERSONAL INTERESTS'
+/ 		.modal-footer
+/ 			= f.button :submit, "CREATE", class: 'cv_btn'
+/ 			= link_to 'CLOSE', '#', 'data-dismiss' => 'modal', class: 'cv_btn'
