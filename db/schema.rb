@@ -40,10 +40,6 @@ ActiveRecord::Schema.define(:version => 20131216192436) do
     t.datetime "updated_at",                             :null => false
     t.string   "customer_id"
     t.string   "last_4_digits"
-    t.date     "birthday"
-    t.boolean  "sex"
-    t.string   "tel"
-    t.string   "skype_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
