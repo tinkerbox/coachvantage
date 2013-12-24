@@ -1,10 +1,7 @@
 .document {
-	padding-left: 50px;
-	padding-right: 50px;
 }
 
 .doc_action_bar {
-	margin-top: 25px;
 }
 
 .doc_action_bar a {
@@ -12,39 +9,34 @@
 }
 
 .doc_action_bar_option {
+	margin-top: 5px;
+}
+
+.doc_action_bar_option .label {
+	margin-top: 4px;
 }
 
 .document hr {
 	border: 1px solid #dcdcdc;
+	margin: 30px 0px;
 }
 
 .doc_list_table {
-	margin-top: 25px;
-}
-
-.doc_list_table tr th#type {
-	width: 5%;
-}
-
-.doc_list_table tr th#title {
-	width: 35%;
-}
-
-.doc_list_table tr th#date_upload {
-	width: 20%;
-}
-
-.doc_list_table tr th#shared_with {
-	width: 25%;
 }
 
 .doc_list_table tr {
 	border: 1px solid #eeeeee;
+	text-align: center;
+}
+
+.share_with_list .client_info {
+	min-width: 1px;
 }
 
 .doc_list_table tr td {
 	border: none;
 	height: 110px;
+	vertical-align: middle !important;
 }
 
 .doc_list_table tr td a {
@@ -52,6 +44,11 @@
 	margin-right: 8px;
 }
 
-.share_with_list {
-	display: inline-block;
+.doc_list_table tr td #btn_download {
+	margin-left: 15px;
+}
+
+.doc_list_table tr td #doc_remove {
+	margin-left: 15px;
+	margin-top: 10px;
 }

@@ -1,5 +1,14 @@
 @import "table";
 
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.label {
+	background-color: transparent;
+}
+
 .select_option {
 	margin-top: 3px;
 }
@@ -54,6 +63,7 @@
 
 .cv_table {
 	text-align: center;
+	text-size: 15px;
 	width: 100%;
 }
 
@@ -162,32 +172,34 @@
 	padding-left: 15px;
 }
 
-.client_info .info_email #name {
-	padding-top: 15px;
+.client_info .info_email {
+	padding-top: 19px;	
 }
 
 .client_info .info_email #email {
-	padding-top: 5p	x;
+	padding-top: 5px;
 	font-size: 11px;
 	color: #1aa4b1;
 }
 
 .client_info .info_detail #name {
-	padding-top: 8px;
+	padding-top: 3px;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 .client_info .info_detail #type {
-	font-size: 10px;
+	font-size: 14px;
 	color: #606060;
 }
 
 .client_info .info_detail #phone {
-	font-size: 12px;
+	font-size: 16px;
 	color: #1aa4b1;
 }
 
 .client_info .info_detail #email {
-	font-size: 12px;
+	font-size: 15px;
 	color: #1aa4b1;
 }
 
@@ -222,4 +234,9 @@
 
 .client_info .info div {
 	margin-top: 28px;
+}
+
+.file_type_icon {
+	width: 20px;
+	height: 25px;
 }

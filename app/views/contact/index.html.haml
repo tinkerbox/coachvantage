@@ -1,34 +1,32 @@
-.contact
-	.contact_action_bar
-		= link_to 'ADD NEW CONTACT', new_contact_path, class: 'cv_btn pull-left', 'data-toggle' => 'modal', :href => '#new_contact_modal'
+= provide(:content_name, 'CONTACTS')
+
+.row.contact
+	.row.contact_action_bar
+		= link_to 'ADD NEW CONTACT', new_contact_path, class: 'cv_btn pull-left', 'data-toggle' => 'modal', :href => '#new_contact_modal', id: 'new_contact'
 		.contact_action_bar_option.pull-right
-			%p.pull-left Display data from:
-			%select.pull-left
+			.label Display data from:
+			%select
 				%option ALL TIME
-			.div_clear
-		.div_clear
 	%hr
-	.contact_caption
+	.row
 		.frame_caption.pull-left All Contacts
-		.pull-right
-			.disp_opt_caption.pull-left Displaying:
-			= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]]), class: 'pull-left'
-		.div_clear
-	.contact_list
+		.disp_opt_caption.pull-right
+			.label Displaying:
+			= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]])
+	.row.contact_list
 		- 15.times do
-			.client_info.contact_info_panel.pull-left
-				.avatar_normal.pull-left
-					%img.img_circle{src: '/assets/avatar/john.jpg'}
-				.info_detail.pull-left
-					%div#name Trevor J.Holden
-					%div#type Individual client
-					%div#phone +65 9625 2358
-					%a{href: 'mailto:#'}
-						#div#email trevorholden@gmail.com
-				.contact_info_expand.pull-left
-					%img{src: '/assets/expand.png'}
-				.div_clear
-		.div_clear
+			.contact_info_panel.col-sm-6.col-xs-11.col-md-6.col-lg-4
+				.client_info
+					.avatar_normal.pull-left
+						%img.img_circle{src: '/assets/avatar/john.jpg'}
+					.info_detail.pull-left
+						%div#name Trevor J.Holden
+						%div#type Individual client
+						%div#phone +65 9625 2358
+						%a{href: 'mailto:#'}
+							#div#email trevorholden@gmail.com
+					.contact_info_expand.pull-left
+						%i.fa.fa-chevron-right
 #new_contact_modal.modal.fade.new_contact
 	= simple_form_for(:user, :url => new_contact_path, :html => {:method => :post, :class => 'form-horizontal' }) do |f|
 		.modal-header

@@ -1,36 +1,40 @@
-.document
-	.doc_action_bar
+= provide(:content_name, 'DOCUMENTS')
+
+.row.document
+	.row.doc_action_bar
 		= link_to 'UPLOAD DOCUMENT', '#', class: 'cv_btn pull-left'
 		.doc_action_bar_option.pull-right
-			%p.pull-left Display data from:
+			.label.pull-left Display data from:
 			%select.pull-left
 				%option ALL TIME
-			.div_clear
-		.div_clear
 	%hr
-	%table.cv_table.doc_list_table
-		%tr
-			%th#type 
-			%th#title Title
-			%th#date_upload Date Uploaded
-			%th#shared_with Shared With
-			%th#action
-		- 10.times do
-			%tr
-				%td
-					%i.icon-home
-				%td
-					%p Contract for John.doc
-				%td
-					%p 30 December 2013
-					%p 12.00pm
-				%td
-					.share_with_list
-						- 2.times do
-							.client_info.pull-left
-								.avatar_small
-									%img.img_circle{src: '/assets/avatar/john.jpg'}
-						.div_clear
-				%td
-					= link_to 'DOWNLOAD', '#', class: 'cv_btn'
-					= link_to '', '#', class: 'i icon-remove'
+	.row
+		.table-responsive
+			%table.cv_table.doc_list_table.table
+				%thead
+					%tr
+						%th#type 
+						%th#title Title
+						%th#date_upload Date Uploaded
+						%th#shared_with Shared With
+						%th#action
+				%tbody
+					- 10.times do
+						%tr
+							%td
+								%img.file_type_icon{src: '/assets/icon/doc.png'}
+							%td
+								%p Contract for John.doc
+							%td
+								%p 30 December 2013
+								%p 12.00pm
+							%td
+								.share_with_list
+									- 4.times do
+										.client_info.pull-left
+											.avatar_small
+												%img.img_circle{src: '/assets/avatar/john.jpg'}
+							%td
+								= link_to '', '#', class: 'i fa fa-download visible-xs cv_td_action_pos', id: 'doc_download'
+								= link_to 'DOWNLOAD', '#', class: 'cv_btn hidden-xs cv_td_action_pos', id: 'btn_download'
+								= link_to '', '#', class: 'i fa fa-times cv_td_action_pos', id: 'doc_remove'

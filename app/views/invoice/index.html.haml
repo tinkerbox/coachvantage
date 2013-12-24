@@ -1,5 +1,7 @@
-.invoice
-	.invoice_action_bar
+= provide(:content_name, 'INVOICES')
+
+.row.invoice
+	.row.invoice_action_bar
 		= link_to 'CREATE NEW INVOICE', '#', class: 'cv_btn pull-left'
 		.invoice_action_bar_option.pull-right
 			%p.pull-left Display data from:
@@ -8,63 +10,72 @@
 			.div_clear
 		.div_clear
 	%hr
-	%p.frame_caption.outstanding_title Outstanding Invoices
-	%table.cv_table.invoice_list_table
-		%tr
-			%th#name Client / Group 
-			%th#date_sent Date Sent
-			%th#date_due Date Due
-			%th#amount Amount
-			%th#action
-		- 3.times do
-			%tr
-				%td
-					.client_info
-						.avatar_normal.pull-left
-							%img.img_circle{src:'/assets/avatar/john.jpg'}
-						.info_email
-							%div#name John Appleseed
-							%div#email
-								%a{href:'mailto:#'} john@appleseed.com
-						.div_clear
-				%td
-					%p 30 December 2013
-					%p 12.00pm
-				%td
-					%p 30 December 2013
-					%p 12.00pm
-				%td
-					%p $2,000
-				%td
-					= link_to 'VIEW INVOICE', '#', class: 'cv_btn'
-					= link_to '', '#', class: 'i icon-edit'
+	.row
+		%p.frame_caption.outstanding_title Outstanding Invoices
+	.row
+		.table-responsive
+			%table.cv_table.invoice_list_table.table
+				%thead
+					%tr
+						%th#name Client / Group 
+						%th#date_sent Date Sent
+						%th#date_due Date Due
+						%th#amount Amount
+						%th#action
+				%tbody
+					- 3.times do
+						%tr
+							%td
+								.client_info
+									.avatar_normal.pull-left
+										%img.img_circle{src:'/assets/avatar/john.jpg'}
+									.info_email.pull-left
+										%div#name John Appleseed
+										%div#email
+											%a{href:'mailto:#'} john@appleseed.com
+									.div_clear
+							%td
+								%p 30 December 2013
+								%p 12.00pm
+							%td
+								%p 30 December 2013
+								%p 12.00pm
+							%td
+								%p $2,000
+							%td
+								= link_to '', '#', class: 'i fa fa-circle visible-xs cv_td_action_pos', id: 'action_record'
+								= link_to 'VIEW INVOICE', '#', class: 'cv_btn hidden-xs cv_td_action_pos', id: 'btn_record'
+								= link_to '', '#', class: 'i fa fa-edit cv_td_action_pos', id: 'action_edit'
 	%p.frame_caption.paid_title Paid Invoices
-	%table.cv_table.invoice_list_table
-		%tr
-			%th#name Client / Group 
-			%th#date_sent Date Sent
-			%th#date_due Date Due
-			%th#amount Amount
-			%th#action
-		- 2.times do
-			%tr
-				%td
-					.client_info
-						.avatar_normal.pull-left
-							%img.img_circle{src:'/assets/avatar/john.jpg'}
-						.info_email
-							%div#name John Appleseed
-							%div#email
-								%a{href:'mailto:#'} john@appleseed.com
-						.div_clear
-				%td
-					%p 30 December 2013
-					%p 12.00pm
-				%td
-					%p 30 December 2013
-					%p 12.00pm
-				%td
-					%p $2,000
-				%td
-					= link_to 'VIEW INVOICE', '#', class: 'cv_btn'
-					= link_to '', '#', class: 'i icon-edit'
+	.row
+		.table-responsive
+			%table.cv_table.invoice_list_table.table
+				%tr
+					%th#name Client / Group 
+					%th#date_sent Date Sent
+					%th#date_due Date Due
+					%th#amount Amount
+					%th#action
+				- 2.times do
+					%tr
+						%td
+							.client_info
+								.avatar_normal.pull-left
+									%img.img_circle{src:'/assets/avatar/john.jpg'}
+								.info_email.pull-left
+									%div#name John Appleseed
+									%div#email
+										%a{href:'mailto:#'} john@appleseed.com
+								.div_clear
+						%td
+							%p 30 December 2013
+							%p 12.00pm
+						%td
+							%p 30 December 2013
+							%p 12.00pm
+						%td
+							%p $2,000
+						%td
+							= link_to '', '#', class: 'i fa fa-circle visible-xs cv_td_action_pos', id: 'action_record'
+							= link_to 'VIEW INVOICE', '#', class: 'cv_btn hidden-xs cv_td_action_pos', id: 'btn_record'
+							= link_to '', '#', class: 'i icon-edit'

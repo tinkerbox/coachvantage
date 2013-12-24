@@ -53,6 +53,28 @@
 	.client_info .info div {
 		margin-top: 5px;
 	}
+
+	.invoice_list_table tr td #action_edit {
+		margin-left: 0px;
+	}
+
+	.client_info .info_email #name {
+		padding-top: 8px;
+	}
+
+	.invoice_list_table .client_info {
+		margin-left: 0px;
+		margin-right: 5px;
+	}
+
+	.client_info .info_email #name {
+		padding-top: 13px;
+	}
+
+	.doc_list_table tr td #doc_remove {
+		margin-left: 0px;
+		margin-top: 10px;
+	}
 }
 
 @media (min-width: $screen-sm-min) {
@@ -64,9 +86,14 @@
 	.client_info {
 		min-width: 230px;
 	}
+
 	.client_info .avatar_normal img {
 		width: 70px;
 		height: 70px;
+	}
+
+	.invoice_list_table tr td #action_edit {
+		margin-left: 0px;
 	}
 }
 
@@ -75,8 +102,19 @@
 		padding-left: 160px;
 		margin-left: 0px;
 	}
+
+	.client_info .avatar_normal img {
+		width: 90px;
+		height: 90px;
+	}
+
+	.invoice_list_table tr td #action_edit {
+		margin-left: 10px;
+	}
 }
 
 @media (min-width: $screen-lg-min) {
-
+	.invoice_list_table tr td #action_edit {
+		margin-left: 10px;
+	}
 }

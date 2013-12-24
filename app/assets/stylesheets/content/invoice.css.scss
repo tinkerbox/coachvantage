@@ -1,10 +1,4 @@
 .invoice {
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
-.invoice_action_bar {
-	margin-top: 25px;
 }
 
 .invoice_action_bar a {
@@ -12,6 +6,7 @@
 }
 
 .invoice_action_bar_option {
+	margin-top: 9px;
 }
 
 .outstanding_title {
@@ -27,23 +22,11 @@
 }
 
 .invoice_list_table {
-	margin-top: 25px;
+	margin-top: 10px;
 }
 
-.invoice_list_table tr th#name {
-	width: 25%;
-}
-
-.invoice_list_table tr th#date_sent {
-	width: 20%;
-}
-
-.invoice_list_table tr th#date_due {
-	width: 20%;
-}
-
-.invoice_list_table tr th#amount {
-	width: 20%;
+.invoice_list_table tr th {
+	text-align: center;
 }
 
 .invoice_list_table tr {
@@ -53,9 +36,18 @@
 .invoice_list_table tr td {
 	border: none;
 	height: 110px;
+	vertical-align: middle !important;
 }
 
-.invoice_list_table tr td a {
+.invoice_list_table tr td #action_record {
+}
+
+.invoice_list_table tr td #btn_record {
+	margin-left: 15px;
 	font-size: 12px;
-	margin-right: 8px;
+}
+
+.invoice_list_table tr td #action_edit {
+	margin-left: 10px;
+	margin-top: 10px;
 }

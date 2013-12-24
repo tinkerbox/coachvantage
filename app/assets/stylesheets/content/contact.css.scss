@@ -2,18 +2,18 @@
 }
 
 .contact_action_bar {
-	margin-top: 25px;
 }
 
-.contact_action_bar a {
+.contact_action_bar #new_contact {
 	font-size: 14px;
 }
 
 .contact_action_bar_option {
+	margin-top: 10px;
 }
 
 .contact hr {
-	border: 1px solid #dcdcdc;
+	border-top: 1px solid #dcdcdc;
 }
 
 .contact_caption {
@@ -21,19 +21,22 @@
 }
 
 .disp_opt_caption {
+	margin-top: 5px;
 }
 
 .contact_list {
+	text-align: center;
 }
 
 .contact_info_panel {
 	background-color: white;
-	padding: 10px;
-	margin: 10px;
+	padding: 15px 0px 15px 5px;
+	border: 15px solid #eee;
+	// margin: 10px;
 }
 
 .contact_info_expand {
-	margin-top: 30px;
+	margin-top: 35px;
 	height: 100%;
 	margin-left: 15px;
 }

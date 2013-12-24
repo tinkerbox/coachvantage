@@ -1,53 +1,50 @@
 .coachinglog {
-	padding-left: 50px;
-	padding-right: 50px;
 }
 
 .cl_action_bar {
-	margin-top: 25px;
 }
 
-.cl_action_bar a {
-	margin-right: 20px;
-	font-size: 14px;
+.cl_action_bar_option {
+	margin-top: 10px;
+}
+
+.cl_action_bar_option .label {
+	margin-top: 4px;
+}
+
+.cl_action_bar a#export_data {
+	margin-left: 20px;
 }
 
 .cl_action_bar_option {
 }
 
 .coachinglog hr {
-	border: 1px solid #dcdcdc;
+	margin: 30px 0px;
+	border-top: 1px solid #dcdcdc;
 }
 
 .client_list_table {
-	margin-top: 25px;
-}
-
-.client_list_table tr th#name {
-	width: 25%;
-}
-
-.client_list_table tr th#start_date {
-	width: 15%;
-}
-
-.client_list_table tr th#end_date {
-	width: 15%;
-}
-
-.client_list_table tr th#paid_hours {
-	width: 15%;
-}
-
-.client_list_table tr th#pro_bono_hours {
-	width: 15%;
 }
 
 .client_list_table tr {
 	border: 1px solid #eeeeee;
 }
 
+.client_list_table tr th {
+	text-align: center;
+}
+
 .client_list_table tr td {
 	border: none;
 	height: 110px;
+	vertical-align: middle !important;
+}
+
+.client_list_table tr td #cl_edit {
+	margin-left: 10px;
+}
+
+.client_list_table tr td #cl_delete {
+	margin-left: 10px;
 }
