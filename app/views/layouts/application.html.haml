@@ -3,7 +3,6 @@
   %head
     %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %title= content_for?(:title) ? yield(:title) : 'Coachvantage'
-    %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Coachvantage'}"}
     = stylesheet_link_tag "bootstrap", media: "all"
     = stylesheet_link_tag "bootflat", media: "all"
     = stylesheet_link_tag "bootflat-extensions", media: "all"
