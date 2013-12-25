@@ -35,6 +35,8 @@ application.js: application-175b386bd0f8fa27c0e4f11ce1db9b30.js
 application/index.js: application-175b386bd0f8fa27c0e4f11ce1db9b30.js
 application.css: application-553edcaba8ba14dafc40d0606a98fc68.css
 application/index.css: application-553edcaba8ba14dafc40d0606a98fc68.css
+main.css: main-88cfe432fdf1539cffdb29f888ff945e.css
+main/index.css: main-88cfe432fdf1539cffdb29f888ff945e.css
 FontAwesome.otf: FontAwesome-1b753859c011e89c9cc8e29a6ee33956.otf
 FontAwesome/index.otf: FontAwesome-1b753859c011e89c9cc8e29a6ee33956.otf
 fontawesome-webfont.eot: fontawesome-webfont-e742c0f297e307a74bdf4ca3c19073a2.eot
