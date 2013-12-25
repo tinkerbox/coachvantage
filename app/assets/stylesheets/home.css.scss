@@ -26,18 +26,21 @@
 	padding-right: 40px;
 }
 
-.input_style {
-	border-radius: 0px;
-	width: 250px;
-	height: 50px;
+.singin_input_right .form-group {
+	margin-top: 40px;
+}
+
+.singin_input_right .form-group:first-child {
+	margin-top: 0px;
 }
 
 .signin_other {
 	padding-top: 5px;
+	padding-left: 40px;
 }
 
 .signin_other a {
-	width: 180px;
+	width: 220px;
 }
 
 .signin_fb_caption {

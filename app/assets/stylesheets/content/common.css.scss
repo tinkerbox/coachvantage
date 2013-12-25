@@ -1,5 +1,3 @@
-@import "table";
-
 .row {
 	margin-left: 0px;
 	margin-right: 0px;
@@ -108,16 +106,14 @@
 	-webkit-border-radius: 5px;
 	border-bottom: 3px solid #788e43;
 	background-color: #8cc10d;
-	padding: 10px 60px 10px 60px;
+	padding: 10px 40px 10px 40px;
 	font-weight: bold;
 }
 
 .cv_signin_btn:hover {
+	border-bottom: 3px solid #788e43;
+	color: #ffffff;
 	background-color: #a1d428;
-}
-
-.cv_signin_btn:active {
-	background-color: #7ea81b;
 }
 
 .cv_btn:hover {
@@ -183,23 +179,23 @@
 }
 
 .client_info .info_detail #name {
-	padding-top: 3px;
+	padding-top: 6px;
 	font-size: 18px;
 	font-weight: bold;
 }
 
 .client_info .info_detail #type {
-	font-size: 14px;
+	font-size: 12px;
 	color: #606060;
 }
 
 .client_info .info_detail #phone {
-	font-size: 16px;
+	font-size: 13px;
 	color: #1aa4b1;
 }
 
 .client_info .info_detail #email {
-	font-size: 15px;
+	font-size: 12px;
 	color: #1aa4b1;
 }
 

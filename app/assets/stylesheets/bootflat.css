@@ -950,7 +950,7 @@ fieldset[disabled] .form-control {
 }
 .checkbox .icheckbox_flat,
 .radio .iradio_flat{
-    background-image: url(../img/check_flat/default.png);
+    background-image: url(/assets/check_flat/default.png);
 }
 .checkbox .icheckbox_flat,
 .radio .iradio_flat{

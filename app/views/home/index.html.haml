@@ -1,22 +1,22 @@
 .row
-  #welcome.hero-unit.col-md-12
+  #welcome.hero-unit.row
     %h1 CoachVantage Site
-  .row.span8.plans
-    .span2.well
+  .row.plans
+    .col-md-3.col-lg-3.col-sm-3.col-xs-3.well
       .plan
         %h2 Clarity
       %ul
         %li Only 100 sessions.
       %h3 $9/month
       = link_to 'Subscribe', new_user_registration_path(:plan => 'clarity'), :class => 'btn btn-primary'
-    .span2.well.featured
+    .col-md-3.col-lg-3.col-sm-3.col-xs-3.well.featured
       .plan.featured-plan
         %h2 Aha
       %ul
         %li Unlimited sessions.
       %h3 $19/month
       = link_to 'Subscribe', new_user_registration_path(:plan => 'aha'), :class => 'btn btn-primary'
-    .span2.well
+    .col-md-3.col-lg-3.col-sm-3.col-xs-3.well
       .plan
         %h2 Team
       %ul

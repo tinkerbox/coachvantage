@@ -52,10 +52,10 @@ SimpleForm.setup do |config|
   # Defaults to :nested for bootstrap config.
   #   :inline => input + label
   #   :nested => label > input
-  config.boolean_style = nil
+  config.boolean_style = :nested
 
   # Default class for buttons
-  config.button_class = nil
+  config.button_class = 'btn-square'
 
   # Method used to tidy up errors. Specify any Rails Array method.
   # :first lists the first message for each field.
@@ -95,7 +95,7 @@ SimpleForm.setup do |config|
   # config.label_text = lambda { |label, required| "#{required} #{label}" }
 
   # You can define the class to use on all labels. Default is nil.
-  config.label_class = 'control-label'
+  config.label_class = 'control-label col-md-5 col-lg-5 col-sm-5 col-xs-5'
 
   # You can define the class to use on all forms. Default is simple_form.
   # config.form_class = :simple_form

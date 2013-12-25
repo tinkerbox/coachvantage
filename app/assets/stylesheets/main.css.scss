@@ -47,7 +47,15 @@
 	.client_info .avatar_normal img {
 		width: 50px;
 		height: 50px;
+	}
+
+	.us_table tr td .client_info .avatar_normal img {
 		margin-left: 45px;
+	}
+
+
+	.contact_info_panel .client_info .avatar_normal {
+		margin-top: 20px;
 	}
 
 	.client_info .info div {
@@ -67,6 +75,14 @@
 		margin-right: 5px;
 	}
 
+	.invoice_list_table tr td .client_info .avatar_normal img {
+		margin-left: 45px;
+	}
+
+	.invoice_list_table tr td .client_info .info_email {
+		padding-top: 0px;
+	}
+
 	.client_info .info_email #name {
 		padding-top: 13px;
 	}
@@ -74,6 +90,18 @@
 	.doc_list_table tr td #doc_remove {
 		margin-left: 0px;
 		margin-top: 10px;
+	}
+
+	.client_list_table tr td .client_info .avatar_normal img {
+		margin-left: 45px;
+	}
+
+	.client_list_table tr td .client_info .info_email {
+		padding-top: 0px;
+	}
+
+	.signin_other {
+		text-align: center;
 	}
 }
 

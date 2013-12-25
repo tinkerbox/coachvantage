@@ -9,5 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require bootstrap
+ *= require bootflat
+ *= require bootflat-extensions
+ *= require bootflat-square
+ *= require content_layout
+ *= require home
+ *= require pricing
+ *= require main
+ *= require font-awesome
+ *= require_tree ./content
  */

@@ -1,24 +1,54 @@
-= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
-	.row-fluid
-		.span12
-			.signin_legend COACHVANTAGE
-			.span6.signin_input
-				.pull-right.singin_input_right
-					= f.input :name, :label => 'USERNAME', :input_html => {:class => 'input_style'}, :autofocus =>true
-					= f.input :password, :label => 'PASSWORD', :input_html => {:class => 'input_style'}
-					= f.input :remember_me, :label => 'REMEMBER ME', :wrapper_html => {:class => 'pull-left'}, :as => :boolean if devise_mapping.rememberable?
-					= f.button :submit, "LOGIN", :class => 'cv_signin_btn pull-right'
-			.span5.signin_other
-				= link_to('#', class: 'btn btn-primary') do
-					%i.fa.fa-facebook-square.fa-2x.pull-left
-					.signin_fb_caption.pull-left Login with Facebook
-					.div_clear
-				.div_clear
-				= link_to('#', class: 'btn btn-danger') do
-					%i.fa.fa-google-plus.fa-2x.pull-left
-					.signin_google_caption.pull-left Signin with Google
-					.div_clear
-		.span12
-			.span2
-			.span10
-				= render "devise/shared/links"
+/ = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
+/ 	.row
+/ 		.signin_legend COACHVANTAGE
+/ 		.col-md-7.col-lg-7.col-sm-7.col-xs-12.signin_input
+/ 			.pull-right.singin_input_right
+/ 				= f.input :name, :label => 'USERNAME', :input_html => {:class => 'form-control form-control-square'}, :autofocus =>true
+/ 				= f.input :password, :label => 'PASSWORD', :input_html => {:class => 'form-control form-control-square'}
+/ 				= f.input :remember_me, :label => 'REMEMBER ME', :wrapper_html => {:class => 'pull-left'}, :as => :boolean if devise_mapping.rememberable?
+/ 				= f.button :submit, "LOGIN", :class => 'cv_signin_btn pull-right'
+/ 		.col-md-5.col-lg-5.col-sm-5.col-xs-12.signin_other
+/ 			= link_to('#', class: 'btn btn-primary') do
+/ 				%i.fa.fa-facebook-square.fa-2x.pull-left
+/ 				.signin_fb_caption.pull-left Login with Facebook
+/ 			= link_to('#', class: 'btn btn-danger') do
+/ 				%i.fa.fa-google-plus.fa-2x.pull-left
+/ 				.signin_google_caption.pull-left Signin with Google
+/ 		.row
+/ 			.col-md-2.col-lg-2.col-sm-2.col-xs-2
+/ 			.col-md-10.col-lg-10.col-sm-10.col-xs-10
+/ 				= render "devise/shared/links"
+
+= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal' }) do |f|
+	.row
+		.signin_legend COACHVANTAGE
+		.col-sm-7.col-xs-12.signin_input
+			.row.singin_input_right
+				.form-group
+					%label{class: 'col-sm-6 control-label'} USERNAME
+					.col-sm-6
+						= f.text_field :name, :class => 'form-control form-control-square', :autofocus =>true
+				.form-group
+					%label{class: 'col-sm-6 control-label'} PASSWORD
+					.col-sm-6
+						= f.text_field :password, :type => 'password', :class => 'password form-control form-control-square'
+				.form-group
+					%label{class: 'col-sm-6 col-xs-5 control-label'} REMEMBER ME
+					.col-sm-2.col-xs-2
+						.checkbox
+							.icheckbox_flat{:style => 'position: relative;'}
+								= f.check_box :remember_me, :id => 'flat-checkbox-1', :style => 'position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); border: 0px; opacity: 0; background-position: initial initial; background-repeat: initial initial;' if devise_mapping.rememberable?
+								%ins{class: 'iCheck-helper', style: 'position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background-color: rgb(255, 255, 255); border: 0px; opacity: 0; background-position: initial initial; background-repeat: initial initial;'}
+					.col-sm-4.col-xs-5
+						= f.submit 'LOGIN', :class => 'cv_signin_btn btn pull-right'
+		.col-md-5.col-lg-5.col-sm-5.col-xs-12.signin_other
+			= link_to('#', class: 'btn btn-primary') do
+				%i.fa.fa-facebook-square.fa-2x.pull-left
+				.signin_fb_caption.pull-left Login with Facebook
+			= link_to('#', class: 'btn btn-danger') do
+				%i.fa.fa-google-plus.fa-2x.pull-left
+				.signin_google_caption.pull-left Signin with Google
+	.row
+		.col-md-2.col-lg-2.col-sm-2
+		.col-md-10.col-lg-10.col-sm-10.col-xs-12
+			= render "devise/shared/links"
