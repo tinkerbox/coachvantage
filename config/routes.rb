@@ -2,7 +2,7 @@ Coachvantage::Application.routes.draw do
   mount StripeEvent::Engine => '/stripe'
 
   authenticated :user do
-    root :to => 'dashboard#index'
+    root :to => 'dashboards#index'
   end
   root :to => "home#index"
 
@@ -13,11 +13,17 @@ Coachvantage::Application.routes.draw do
   end
 
   resources :users
-  resources :dashboard
-  resources :coachinglog
-  resources :document
-  resources :invoice
-  resources :contact
-  resources :schedule
-  resources :report
+  resources :dashboards
+  resources :coachinglogs
+  resources :documents
+  resources :invoices
+  resources :contacts do
+    resources :notes
+    resources :details
+    resources :sessions
+    resources :invoices
+    resources :contracts
+  end
+  resources :schedules
+  resources :reports
 end

@@ -1,0 +1,2 @@
+module Contact::InvoiceHelper
+end

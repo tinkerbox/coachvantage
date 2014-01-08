@@ -8,7 +8,7 @@
 # Environment variables (ENV['...']) are set in the file config/application.yml.
 # See http://railsapps.github.io/rails-environment-variables.html
 puts 'ROLES'
-%w[admin clarity aha team].each do |role|
+%w[admin clarity aha team coachee].each do |role|
   Role.find_or_create_by_name({ :name => role }, :without_protection => true)
   puts 'role: ' << role
 end

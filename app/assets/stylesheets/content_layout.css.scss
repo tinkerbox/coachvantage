@@ -76,6 +76,17 @@ body {
 	color: white;
 }
 
+#sidebar ul li.hover a {
+	text-decoration: none;
+	background-color: #28bce3;
+	color: white;
+}
+
+#sidebar ul li.active a {
+	background-color: #0283a5;
+	color: white;
+}
+
 #content_div {
 	width: 100%;
 }

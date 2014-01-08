@@ -26,6 +26,14 @@
 							= link_to 'users/sign_out', method: :delete do
 								%i.fa.fa-cog
 								SETTINGS
+					.content_flash
+						#flash-container.container
+							- flash.each do |type, msg|
+								- if msg.is_a?(String)
+									%div{ class: "alert alert-#{ type == :notice ? 'success' : 'error' }" }
+										%a.close{'data-dismiss' => 'alert'}
+											&times;
+										= msg
 					.content_main
 						.content_yield
 							= yield

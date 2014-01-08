@@ -1,0 +1,2 @@
+module Contact::SessionHelper
+end

@@ -8,7 +8,17 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :stripe_token, :coupon
-  # attr_accessible :birthday, :sex, :tel, :skype_id, :avatar
+
+  attr_accessible :salutation, :first_name, :last_name, :gender, :birthday
+  attr_accessible :home_addr, :mobile, :tel_home, :tel_office, :skype_id
+  attr_accessible :biz_title, :company_name, :company_addr, :interests, :life_obj, :biz_obj, :profile
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :gender, presence: true
+  validates :email, presence: true
+  validates :skype_id, presence: true
+
   attr_accessor :stripe_token, :coupon
   # before_save :update_stripe
   before_destroy :cancel_subscription

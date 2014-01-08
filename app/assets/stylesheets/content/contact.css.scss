@@ -38,21 +38,56 @@
 .contact_info_expand {
 	margin-top: 35px;
 	height: 100%;
-	margin-left: 15px;
+	margin-right: 15px;
 }
 
-.contact_profile {
-	margin-top: 30px;
-	padding-left: 50px;
-	padding-right: 50px;
-}
-
-.contact_profile #start_session {
+#start_session {
 	margin-top: 40px;
 }
 
+#client_profile {
+	margin-top: 40px;
+	min-height: 40px;
+}
+
+#client_profile ul {
+	height: 40px;
+	padding: 0px;
+	width: 100%;
+}
+
+#client_profile ul li {
+	text-align: center;
+	border-right: 1px solid white;
+	vertical-align: middle;
+	padding: 0px;
+	width: 20%;
+}
+
+#client_profile ul li:last-child {
+	border: none;
+}
+
+#client_profile ul li a {
+	display: block;
+	padding: 10px;
+	color: white;	
+}
+
+#client_profile ul li a:hover {
+	background-color: #2fc0e5;
+}
+
+#client_profile ul li a:active {
+	background-color: #0282a3;
+}
+
+#cp_navbar {
+	padding: 0px;
+}
+
 .new_contact {
-	padding: 30px;
+	padding: 50px;
 	role: dialog;
-	display: none
+	display: none;
 }

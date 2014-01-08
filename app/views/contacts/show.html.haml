@@ -1,0 +1,32 @@
+.row
+	.client_info
+		.avatar_large.pull-left
+			%img.img_circle{src: '/assets/avatar/john.jpg'}
+		.info_detail_large.pull-left
+			%div#name #{@user.name}
+			%div#type #{@user.role_ids}
+			%div#phone #{@user.mobile}
+			%a{href: 'mailto:#'}
+				#div#email #{@user.email}
+	= link_to 'START SESSION', '#', class: 'cv_btn pull-right', id: 'start_session'
+.row
+	.col-md-12#client_profile
+		.row
+			%nav.navbar.navbar-default.navbar-square#client_profile
+				.navbar-header
+					%button.navbar-toggle.btn-square{:'data-toggle' => 'collapse', :'data-target' => '#cp_navbar'}
+						.i.fa.fa-bars
+				.collapse.navbar-collapse#cp_navbar
+					%ul.nav.navbar-nav
+						%li{class: (params[:controller] == 'notes' && 'active')}
+							%a{href: contact_notes_path(params[:id])} NOTES
+						%li{class: (params[:controller] == 'contact/details' && 'active')}
+							%a{href: '/contact/details'} DETAILS
+						%li{class: (params[:controller] == 'contact/sessions' && 'active')}
+							%a{href: '/contact/sessions'} SESSIONS
+						%li{class: (params[:controller] == 'contact/invoices' && 'active')}
+							%a{href: '/contact/invoices'} INVOICES
+						%li{class: (params[:controller] == 'contact/contracts' && 'active')}
+							%a{href: '/contact/contracts'} CONTRACT
+		.row
+			= yield

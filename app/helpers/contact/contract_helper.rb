@@ -1,0 +1,2 @@
+module Contact::ContractHelper
+end

@@ -1,0 +1,2 @@
+module Contact::NoteHelper
+end

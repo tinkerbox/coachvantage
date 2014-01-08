@@ -5,6 +5,12 @@
 
 .label {
 	background-color: transparent;
+	color: #7f7f7f;
+}
+
+input[type="submit"] {
+	outline: none;
+	line-height: normal;
 }
 
 .select_option {
@@ -92,6 +98,8 @@
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
+	border: 0px;
+	display: initial;
 	border-bottom: 3px solid #788e43;
 	background-color: #8cc10d;
 	padding: 10px;
@@ -141,7 +149,7 @@
 }
 
 .client_info {
-	margin-left: 20px;
+	margin-left: 10px;
 }
 
 .img_circle {
@@ -205,27 +213,29 @@
 
 .client_info .info_detail_large #name {
 	line-height: normal;
-	padding-top: 5px;
-	font-size: 30px;
+	padding-top: 15px;
+	font-size: 22px;
 	font-weight: bold;
 }
 
 .client_info .info_detail_large #type {
-	padding-top: 10px;
-	font-size: 18px;
+	padding-top: 5px;
+	font-size: 13px;
 	color: #606060;
 }
 
 .client_info .info_detail_large #phone {
-	font-size: 24px;
-	padding-top: 20px;
+	font-size: 15px;
+	padding-top: 15px;
 	color: #1aa4b1;
+	text-decoration: underline;
 }
 
 .client_info .info_detail_large #email {
 	padding-top: 10px;
-	font-size: 24px;
+	font-size: 15px;
 	color: #1aa4b1;
+	text-decoration: underline;
 }
 
 .client_info .info div {
@@ -235,4 +245,8 @@
 .file_type_icon {
 	width: 20px;
 	height: 25px;
+}
+
+.modal_caption {
+	text-align: center;
 }
