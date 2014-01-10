@@ -110,5 +110,4 @@ class User < ActiveRecord::Base
       break random_token unless User.where(token: random_token).exists?
     end
   end
-
 end
