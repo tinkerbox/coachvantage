@@ -1,0 +1,10 @@
+.client_info
+	.avatar_large.pull-left
+		%img.img_circle{src: '/assets/avatar/john.jpg'}
+	.info_detail_large.pull-left
+		%div#name #{@contact.first_name + ' ' + @contact.last_name}
+		%div#type #{@contact.salutation}
+		%div#phone #{@contact.mobile}
+		%a{href: 'mailto:#'}
+			#div#email #{@contact.email}
+= link_to 'START SESSION', '#', class: 'cv_btn pull-right', id: 'start_session'

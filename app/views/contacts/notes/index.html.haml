@@ -1,2 +1,27 @@
 .row
-	%p #{params[:id]}
+	= render 'contacts/showinfo'
+.row
+	.col-md-12#client_profile
+		.row
+			= render 'contacts/shownav'
+		.row.contact_description
+			.col-md-3.notes_side
+				#session_notes
+					%p
+						SESSION NOTES
+						%i.fa.fa-plus-circle
+					%ul
+						- 3.times do
+							%li
+								%a{href: '#'} 1 August 2013
+				%hr
+				#documents
+					%p
+						DOCUMENTS
+						%i.fa.fa-plus-circle
+					%ul
+						-2.times do
+							%li
+								%a{href: '#'} Payment contract
+			.col-md-9.notes_content
+				= form_for(:note, :url => contact_notes_path(params[:contact_id]))

@@ -14,23 +14,23 @@
 			.label Displaying:
 			= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]])
 	.row.contact_list
-		- @users.each do |user|
+		- @contacts.each do |contact|
 			.contact_info_panel.col-sm-6.col-xs-11.col-md-6.col-lg-4
 				.client_info
 					.avatar_normal.pull-left
-						%a{href: contact_path(user[:id])}
+						%a{href: contact_notes_path(contact[:id])}
 							%img.img_circle{src: '/assets/avatar/john.jpg'}
 					.info_detail.pull-left
-						%a{href: contact_path(user[:id])}
-							%div#name #{user.name}
-						%div#type #{user.role_ids}
-						%div#phone #{user.mobile}
+						%a{href: contact_notes_path(contact[:id])}
+							%div#name #{contact.first_name + ' ' + contact.last_name}
+						%div#type #{contact.salutation}
+						%div#phone #{contact.mobile}
 						%a{href: 'mailto:#'}
-							#div#email #{user.email}
+							#div#email #{contact.email}
 					.contact_info_expand.pull-right
 						%i.fa.fa-chevron-right
 #new_contact_modal.modal.fade.new_contact
-	= form_for(:user, :url => contacts_path, :html => {:method => :post, :class => 'form' }) do |f|
+	= form_for(:contact, :url => contacts_path, :html => {:method => :post, :class => 'form' }) do |f|
 		.col-lg-2
 		.col-lg-8{style: 'background-color: #f3f3f3;'}
 			.modal-header

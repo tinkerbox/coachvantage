@@ -10,4 +10,7 @@ class SchedulesController < ApplicationController
 
   def edit
   end
+
+  def get_schedule
+  end
 end

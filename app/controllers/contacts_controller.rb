@@ -3,40 +3,31 @@ class ContactsController < ApplicationController
 	layout 'content_layout'
 
   def index
-    @users = User.with_role :coachee
+    @contacts = current_user.contacts
   end
 
   def new
-    @user = User.new
+    @contact = Contact.new
   end
 
   def edit
   end
 
   def show
-    @user = User.find(params[:id])
+    @contact = Contact.find(params[:id])
   end
 
   def create
-    @user = User.new(params[:user])
-    @user.name = @user.first_name + ' ' + @user.last_name
-    email_exist = User.where(:email => params[:user][:email]).exists?
-    name_exist = User.where(:name => @user.name).exists?
+    @contact = current_user.contacts.create(params[:contact])
+    # email_exist = Contact.where(:email => @contact.email).exists?
 
-    if email_exist
-      redirect_to contacts_path, alert: 'Contact account is already exist. Confirm or reset the password.'
-      return
-    end
-
-    if name_exist
-      redirect_to contacts_path, alert: 'Contact name is already taken. Change your name.'
-      return
-    end
-    @user.password = 'tesdfsdfsdfst';
-    @user.add_role :coachee
+    # if email_exist
+    #   redirect_to contacts_path, alert: 'Contact account is already exist. Confirm or reset the password.'
+    #   return
+    # end
     puts '=================================='
-    puts @user.inspect
-    if @user.save
+    puts @contact.inspect
+    if @contact.save
       puts 'Succeed'
       redirect_to contacts_path, notice: 'Succeed'
     else

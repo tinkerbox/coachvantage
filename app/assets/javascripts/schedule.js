@@ -58,8 +58,8 @@ $(document).ready(function() {
           url: 'http://google.com/'
         }
       ],
+
       eventClick: function(event, jsEvent, view){
-        showEventDetails(event);
       }
     });
     

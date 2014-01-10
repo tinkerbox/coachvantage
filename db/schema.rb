@@ -11,7 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131227181938) do
+ActiveRecord::Schema.define(:version => 20140109161115) do
+
+  create_table "contacts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "salutation"
+    t.string   "first_name",   :default => "", :null => false
+    t.string   "last_name",    :default => "", :null => false
+    t.string   "gender",       :default => "", :null => false
+    t.date     "birthday"
+    t.string   "home_addr"
+    t.string   "mobile"
+    t.string   "tel_home"
+    t.string   "tel_office"
+    t.string   "email",        :default => "", :null => false
+    t.string   "skype_id",     :default => "", :null => false
+    t.string   "biz_title"
+    t.string   "company_name"
+    t.string   "company_addr"
+    t.string   "interests"
+    t.string   "life_obj"
+    t.string   "biz_obj"
+    t.string   "profile"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+  end
+
+  add_index "contacts", ["email"], :name => "index_contacts_on_email", :unique => true
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -40,23 +66,6 @@ ActiveRecord::Schema.define(:version => 20131227181938) do
     t.datetime "updated_at",                             :null => false
     t.string   "customer_id"
     t.string   "last_4_digits"
-    t.string   "salutation"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "gender"
-    t.date     "birthday"
-    t.string   "home_addr"
-    t.string   "mobile"
-    t.string   "tel_home"
-    t.string   "tel_office"
-    t.string   "skype_id"
-    t.string   "biz_title"
-    t.string   "company_name"
-    t.string   "company_addr"
-    t.string   "interests"
-    t.string   "life_obj"
-    t.string   "biz_obj"
-    t.string   "profile"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

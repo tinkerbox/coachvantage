@@ -1,3 +1,16 @@
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery-ui.custom.min
+//= require bootstrap
+//= require bootbox.min
+//= require fullcalendar.min
+//= require content
+//= require coachinglog
+//= require contact
+//= require dashboard
+//= require document
+//= require home
+//= require invoice
+//= require registrations
+//= require report
+//= require schedule

@@ -46,17 +46,18 @@
 }
 
 #client_profile {
-	margin-top: 40px;
+	margin-top: 20px;
 	min-height: 40px;
+	margin-bottom: 0px;
 }
 
-#client_profile ul {
+#client_profile #cp_navbar ul {
 	height: 40px;
 	padding: 0px;
 	width: 100%;
 }
 
-#client_profile ul li {
+#client_profile #cp_navbar ul li {
 	text-align: center;
 	border-right: 1px solid white;
 	vertical-align: middle;
@@ -64,21 +65,21 @@
 	width: 20%;
 }
 
-#client_profile ul li:last-child {
+#client_profile #cp_navbar ul li:last-child {
 	border: none;
 }
 
-#client_profile ul li a {
+#client_profile #cp_navbar ul li a {
 	display: block;
 	padding: 10px;
 	color: white;	
 }
 
-#client_profile ul li a:hover {
+#client_profile #cp_navbar ul li a:hover {
 	background-color: #2fc0e5;
 }
 
-#client_profile ul li a:active {
+#client_profile #cp_navbar ul li a:active {
 	background-color: #0282a3;
 }
 
@@ -90,4 +91,46 @@
 	padding: 50px;
 	role: dialog;
 	display: none;
+}
+
+.contact_description {
+	margin: 0px;
+	padding: 0px;
+	padding-top: 15px;
+	background-color: white;
+}
+
+.notes_side {
+}
+
+.notes_side p {
+	font-weight: bold;
+	color: #333;
+}
+
+.notes_side p i {
+	color: #8cc10d;
+	font-size: 18px;
+}
+
+.notes_side ul {
+	list-style-type: none;
+	padding-left: 5px;
+}
+
+.notes_side ul li {
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+.notes_side ul li a {
+	border-bottom: 1px dashed #00a2cb;
+}
+
+.notes_side ul li a:hover {
+	text-decoration: none;
+}
+
+.notes_content {
+	padding: 20px 30px;
 }

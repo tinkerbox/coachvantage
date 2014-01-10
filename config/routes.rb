@@ -18,11 +18,13 @@ Coachvantage::Application.routes.draw do
   resources :documents
   resources :invoices
   resources :contacts do
-    resources :notes
-    resources :details
-    resources :sessions
-    resources :invoices
-    resources :contracts
+    scope module: 'contacts' do
+      resources :notes
+      resources :details
+      resources :sessions
+      resources :invoices
+      resources :contracts
+    end
   end
   resources :schedules
   resources :reports

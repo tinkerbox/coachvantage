@@ -1,0 +1,16 @@
+%nav.navbar.navbar-default.navbar-square#client_profile
+	.navbar-header
+		%button.navbar-toggle.btn-square{:'data-toggle' => 'collapse', :'data-target' => '#cp_navbar'}
+			.i.fa.fa-bars
+	.collapse.navbar-collapse#cp_navbar
+		%ul.nav.navbar-nav
+			%li{class: (params[:controller] == 'contacts/notes' && 'active')}
+				%a{href: contact_notes_path(params[:contact_id])} NOTES
+			%li{class: (params[:controller] == 'contacts/details' && 'active')}
+				%a{href: contact_details_path(params[:contact_id])} DETAILS
+			%li{class: (params[:controller] == 'contacts/sessions' && 'active')}
+				%a{href: contact_sessions_path(params[:contact_id])} SESSIONS
+			%li{class: (params[:controller] == 'contacts/invoices' && 'active')}
+				%a{href: contact_invoices_path(params[:contact_id])} INVOICES
+			%li{class: (params[:controller] == 'contacts/contracts' && 'active')}
+				%a{href: contact_contracts_path(params[:contact_id])} CONTRACT

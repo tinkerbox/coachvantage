@@ -1,31 +1,31 @@
 %ul.nav-stacked
 	%li
 		%p COACHVANTAGE
-	%li.nav-menu{class: "#{sidebar_class('dashboards')}"}
+	%li.nav-menu{class: (params[:controller] == 'dashboards' && 'active')}
 		%a{href: '/dashboards'}
 			%img{src: '/assets/dashboard.PNG'}
 			%h5 Dashboard
-	%li.nav-menu{class: "#{sidebar_class('schedules')}"}
+	%li.nav-menu{class: (params[:controller] == 'schedules' && 'active')}
 		%a{href: '/schedules'}
 			%img{src: '/assets/schedule.PNG'}
 			%h5 Schedule
-	%li.nav-menu{class: "#{sidebar_class('contacts')}"}
+	%li.nav-menu{class: ((params[:controller].include? 'contacts') && 'active')}
 		%a{href: '/contacts'}
 			%img{src: '/assets/contact.PNG'}
 			%h5 Contact
-	%li.nav-menu{class: "#{sidebar_class('invoices')}"}
+	%li.nav-menu{class: (params[:controller] == 'invoices' && 'active')}
 		%a{href: '/invoices'}
 			%img{src: '/assets/invoice.PNG'}
 			%h5 Invoice
-	%li.nav-menu{class: "#{sidebar_class('coachinglogs')}"}
+	%li.nav-menu{class: (params[:controller] == 'coachinglogs' && 'active')}
 		%a{href: '/coachinglogs'}
 			%img{src: '/assets/coachinglog.PNG'}
 			%h5 Coaching Log
-	%li.nav-menu{class: "#{sidebar_class('documents')}"}
+	%li.nav-menu{class: (params[:controller] == 'documents' && 'active')}
 		%a{href: '/documents'}
 			%img{src: '/assets/document.PNG'}
 			%h5 Document
-	%li.nav-menu{class: "#{sidebar_class('reports')}"}
+	%li.nav-menu{class: (params[:controller] == 'reports' && 'active')}
 		%a{href: '/reports'}
 			%img{src: '/assets/report.PNG'}
 			%h5 Report
