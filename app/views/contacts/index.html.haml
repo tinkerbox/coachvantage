@@ -22,7 +22,7 @@
 							%img.img_circle{src: '/assets/avatar/john.jpg'}
 					.info_detail.pull-left
 						%a{href: contact_notes_path(contact[:id])}
-							%div#name #{contact.first_name + ' ' + contact.last_name}
+							%div#name #{contact.name}
 						%div#type #{contact.salutation}
 						%div#phone #{contact.mobile}
 						%a{href: 'mailto:#'}

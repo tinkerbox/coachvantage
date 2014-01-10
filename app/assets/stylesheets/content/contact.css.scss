@@ -134,3 +134,47 @@
 .notes_content {
 	padding: 20px 30px;
 }
+
+.contact_sessions {
+	padding: 20px 50px;
+}
+
+.contact_upcomming_sessions {
+	padding-top: 30px;
+}
+
+.contact_table {
+
+}
+
+.contact_table {
+	margin-top: 25px;
+}
+
+.contact_table tr {
+	// border: 1px solid #eeeeee;
+}
+
+.contact_table tr th {
+	text-align: center;
+	background-color: #bbb;
+}
+
+.contact_table thead tr th#date_time {
+	width: 25%;
+}
+
+.contact_table thead tr th#location {
+	width: 50%;
+}
+
+.contact_table tr td {
+	border: none;
+	height: 110px;
+	color: #3a2a4d;
+	vertical-align: middle !important;
+}
+
+.contact_invoices {
+	padding: 20px 50px;
+}
