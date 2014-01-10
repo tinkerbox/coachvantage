@@ -8,7 +8,7 @@
 		= stylesheet_link_tag "main", media: "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
-	%body{class: "#{@current_user.settings.color_scheme}"}
+	%body{class: "#{current_user.setting.color_scheme}"}
 		.page_fixed
 			.navbar.navbar-inverse.navbar-fixed-top.visible-xs#nav_header
 				%button{class: 'navbar-toggle pull-left', type: 'button', 'data-toggle' => 'collapse', 'data-target' =>'#sidebar', id: 'collapse_btn'}

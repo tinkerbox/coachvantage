@@ -26,6 +26,16 @@ class UsersController < ApplicationController
       redirect_to users_path, :alert => "Unable to update user."
     end
   end
+
+  def update_setting
+    authorize! :update, @user, :message => 'You have no authorization.'
+    @user = User.find(params[:id])
+    if @user.update_attributes(params[:user])
+      redirect_to settings_users_path, :notice => "Your Settings is updated."
+    else
+      redirect_to settings_users_path, :alert => "Unable to update Setting."
+    end
+  end
     
   def destroy
     authorize! :destroy, @user, :message => 'Not authorized as an administrator.'

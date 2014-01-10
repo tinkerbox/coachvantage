@@ -16,6 +16,10 @@ Coachvantage::Application.routes.draw do
     collection do
       get :settings
     end
+
+    member do
+      put :update_setting
+    end
   end
   resources :dashboards
   resources :coachinglogs

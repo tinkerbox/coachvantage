@@ -1,11 +1,14 @@
 = provide(:content_name, "SETTINGS")
 
-= simple_form_for(, :url => contacts_path, :html => {:method => :post, :class => 'form' }) do |f|
-	= f.fields_for :settings do |p|
+= simple_form_for(current_user, :url => update_setting_user_path(current_user), :html => {:method => :put, :class => 'form' }) do |f|
+	= f.fields_for :setting do |p|
 		.row
 			.col-sm-4
 				%h2 General Settings
-				= p.input :color_scheme, input_html: {class: "form-control form-control-square"}
+				= p.label :color_scheme
+				.form-group
+					= p.select :color_scheme, %w[purple blue green].map{|color|[color.titleize, color]}
+
 				= p.input :motivational_quotes_feed, input_html: {class: "form-control form-control-square"}
 				
 				%h2 Workspace
@@ -16,7 +19,7 @@
 				%h2 Invoice & Billing
 				= p.label :payment_service
 				.form-group
-					= p.select :payment_service, options_for_select: %w[Paypal Chargebee]
+					= p.select :payment_service, %w[Paypal Chargebee]
 
 				= p.input :paypal_email_address, input_html: {class: "form-control form-control-square"}
 				
@@ -31,4 +34,4 @@
 
 	.row.pull-right
 		%br
-		= p.submit "Save Settings", class: "cv_btn"
+		= f.submit "Save Settings", class: "cv_btn"

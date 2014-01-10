@@ -1,2 +1,101 @@
-.theme_back_color {
+body.blue {
+	.cv_table tr th {
+		background-color: #0283a5;
+	}
+
+	.sub_caption {	
+		background-color: #0283a5;
+	}
+
+	#nav_header {
+		background-color: #00a1cb;
+	}
+
+	#sidebar {
+		background-color: #00a1cb;
+	}
+
+
+	#sidebar ul li {
+		border-bottom: 1px solid #14add6;
+	}
+
+	#sidebar ul li a {
+		background-color: #00a1cb;
+	}
+
+	#sidebar ul li a:hover {
+		background-color: #28bce3;
+	}
+
+	#sidebar ul li a:active {
+		background-color: #0283a5;
+	}
+
+	#sidebar ul li.hover a {
+		background-color: #28bce3;
+	}
+
+	#sidebar ul li.active a {
+		background-color: #0283a5;
+	}
+
+	.content_header h5 {
+		color: #54426a;
+	}
+
+	.content_header h5 a {
+		color: #9f9f9f;
+	}
+}
+
+body.purple {
+	.cv_table tr th {
+		background-color: #573F73;
+	}
+
+	.sub_caption {	
+		background-color: #573F73;
+	}
+
+	#nav_header {
+		background-color: #573f73;
+	}
+
+	#sidebar {
+		background-color: #573f73;
+	}
+
+
+	#sidebar ul li {
+		border-bottom: 1px solid #665081;
+	}
+
+	#sidebar ul li a {
+		background-color: #573f73;
+	}
+
+	#sidebar ul li a:hover {
+		background-color: #38294A;
+	}
+
+	#sidebar ul li a:active {
+		background-color: #38294A;
+	}
+
+	#sidebar ul li.hover a {
+		background-color: #38294A;
+	}
+
+	#sidebar ul li.active a {
+		background-color: #38294A;
+	}
+
+	.content_header h5 {
+		color: #54426a;
+	}
+
+	.content_header h5 a {
+		color: #9f9f9f;
+	}
 }
