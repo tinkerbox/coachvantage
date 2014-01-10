@@ -1,3 +1,5 @@
+= provide(:content_name, "CONTACTS > #{@contact.name}")
+
 .row
 	= render 'contacts/showinfo'
 .row
@@ -24,4 +26,11 @@
 							%li
 								%a{href: '#'} Payment contract
 			.col-md-9.notes_content
-				= form_for(:note, :url => contact_notes_path(params[:contact_id]))
+				= form_for(:note, :url => contact_notes_path(params[:contact_id]), :html => {:method => :post, :class => 'form' }) do |f|
+					.form-group
+						= f.text_field :caption, class: 'form-control form-control-square'
+					.form-group
+						= f.text_area :content, class: 'form-control form-control-square', :rows => 20
+					.form-group.pull-right
+						= f.submit 'DELETE NOTE', class: 'cv_btn'
+						= f.submit 'SAVE NOTE', class: 'cv_btn'

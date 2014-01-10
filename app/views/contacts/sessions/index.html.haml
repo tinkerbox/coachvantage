@@ -1,8 +1,50 @@
+= provide(:content_name, "CONTACTS > #{@contact.name}")
+
 .row
 	= render 'contacts/showinfo'
 .row
 	.col-md-12#client_profile
 		.row
 			= render 'contacts/shownav'
-		.row
-			sfasfasfd
+		.row.contact_description
+			.contact_sessions
+				.frame_caption.pull-left Upcoming Sessions
+				.row.contact_upcomming_sessions
+					.table-responsive
+						%table.cv_table.table.contact_table
+							%thead
+								%tr
+									%th#date_time Date / Time
+									%th#location Location
+									%th#action
+							%tbody
+								- 3.times do |i|
+									%tr
+										%td 12 November 2013
+										%td 84 Riverina View, Pasir Ris.
+										%td
+											= link_to 'LOG SESSION', '#', class: 'cv_btn us_action_log cv_td_action_pos hidden-xs', id: 'log'
+											= link_to '', '#', class: 'i fa fa-circle cv_td_action_pos visible-xs', id: 'record'
+											= link_to '', '#', class: 'i fa fa-edit cv_td_action_pos', id: 'edit'
+											= link_to '', '#', class: 'i fa fa-times cv_td_action_pos', id: 'delete'
+											.div_clear
+				.frame_caption.pull-left Completed Sessions
+				.row.contact_upcomming_sessions
+					.table-responsive
+						%table.cv_table.table.contact_table
+							%thead
+								%tr
+									%th#date_time Date / Time
+									%th#location Location
+									%th#action
+							%tbody
+								- 3.times do |i|
+									%tr
+										%td 12 November 2013
+										%td 84 Riverina View, Pasir Ris.
+										%td
+											= link_to 'LOG SESSION', '#', class: 'cv_btn us_action_log cv_td_action_pos hidden-xs', id: 'log'
+											= link_to '', '#', class: 'i fa fa-circle cv_td_action_pos visible-xs', id: 'record'
+											= link_to '', '#', class: 'i fa fa-edit cv_td_action_pos', id: 'edit'
+											= link_to '', '#', class: 'i fa fa-times cv_td_action_pos', id: 'delete'
+											.div_clear

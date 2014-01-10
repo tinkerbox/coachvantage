@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :token, :password, :password_confirmation, :remember_me, :stripe_token, :coupon
-  accepts_nested_attributes_for :setting
+  # accepts_nested_attributes_for :setting
 
   has_many :contacts
   has_one :setting
@@ -96,9 +96,9 @@ class User < ActiveRecord::Base
   end
   
   def initialize_settings
-    setting = self.setting.build
-    setting.color_scheme = "purple"
-    setting.save
+    # setting = self.setting.build
+    # setting.color_scheme = "purple"
+    # setting.save
   end
 
   private
