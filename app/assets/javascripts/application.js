@@ -4,6 +4,7 @@
 //= require bootstrap
 //= require bootbox.min
 //= require fullcalendar.min
+//= require_tree ./fancyfields
 //= require content
 //= require coachinglog
 //= require contact
