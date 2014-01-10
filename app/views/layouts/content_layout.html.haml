@@ -8,7 +8,7 @@
 		= stylesheet_link_tag "main", media: "all"
 		= javascript_include_tag "application"
 		= csrf_meta_tags
-	%body
+	%body{class: "#{@current_user.settings.color_scheme}"}
 		.page_fixed
 			.navbar.navbar-inverse.navbar-fixed-top.visible-xs#nav_header
 				%button{class: 'navbar-toggle pull-left', type: 'button', 'data-toggle' => 'collapse', 'data-target' =>'#sidebar', id: 'collapse_btn'}
@@ -22,10 +22,22 @@
 					.content_header
 						%h5.visible-md.visible-.visible-lg.pull-left
 							= yield(:content_name)
-						%h5.pull-right
-							= link_to 'users/sign_out', method: :delete do
-								%i.fa.fa-cog
-								SETTINGS
+						%ul.nav.navbar-nav.pull-right
+							%li.dropdown
+								%a.dropdown-toggle{"data-close-others" => "true", "data-toggle" => "dropdown", href: "#"}
+									%i.fa.fa-user
+									%span.username
+										= current_user.name
+									%i.fa.fa-angle-down
+								%ul.dropdown-menu
+									%li
+										= link_to settings_users_path do
+											%i.fa.fa-cog
+											SETTINGS
+									%li
+										= link_to destroy_user_session_path, method: :delete do
+											%i.fa.fa-sign-out
+											LOG OUT
 					.content_flash
 						#flash-container.container
 							- flash.each do |type, msg|

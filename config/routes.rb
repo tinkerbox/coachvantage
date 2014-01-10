@@ -12,7 +12,11 @@ Coachvantage::Application.routes.draw do
     put 'update_card', :to => 'registrations#update_card'
   end
 
-  resources :users
+  resources :users do
+    collection do
+      get :settings
+    end
+  end
   resources :dashboards
   resources :coachinglogs
   resources :documents

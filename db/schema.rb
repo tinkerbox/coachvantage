@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140109161115) do
+ActiveRecord::Schema.define(:version => 20140110093652) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "user_id"
@@ -50,6 +50,22 @@ ActiveRecord::Schema.define(:version => 20140109161115) do
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
+  create_table "settings", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "color_scheme"
+    t.string   "motivational_quotes_feed"
+    t.string   "custom_logo"
+    t.string   "customized_message"
+    t.string   "payment_service"
+    t.string   "paypal_email_address"
+    t.string   "sync_calendars"
+    t.string   "buffer_time"
+    t.string   "freshbook_id"
+    t.string   "intuit_id"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name",                   :default => "", :null => false
     t.string   "email",                  :default => "", :null => false
@@ -66,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20140109161115) do
     t.datetime "updated_at",                             :null => false
     t.string   "customer_id"
     t.string   "last_4_digits"
+    t.string   "token"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
