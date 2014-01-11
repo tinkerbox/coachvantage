@@ -4,5 +4,27 @@
 	.col-md-12#client_profile
 		.row
 			= render 'contacts/shownav'
-		.row
-			sfasfasfd
+		.row.contact_description
+			.contact_contract
+				= simple_form_for(:contract, :url => contact_contracts_path(params[:contact_id]), :html => {:method => :put, :class => 'form_horizontal' }) do |f|
+					.col-md-3.col-sm-12
+						.form-group
+							= f.label "Contract Type"
+							= f.select :contract_type, %w[days weeks months years].map{|type|[type.titleize, type]}
+						%br
+						.form-group#session_duration
+							= f.input :session_duration, input_html: {class: "form-control form-control-square"}
+					.col-md-3.col-sm-12
+						.form-group
+							= f.input "No. of Contract", input_html: {class: "form-control form-control-square"}
+						%br
+						.form-group
+							= f.input :billing_arrangement, input_html: {class: "form-control form-control-square"}
+					.col-md-3.col-sm-12
+						.form-group
+							= f.input :start_date, input_html: { class: "form-control form-control-square", value: Time.now.strftime('%d-%m-%Y') }
+						%br
+						.form-group
+							= f.input :fees, input_html: {class: "form-control form-control-square"}
+					.col-md-3.col-sm-12
+						= f.input :end_date, input_html: { class: "form-control form-control-square", value: Time.now.strftime('%d-%m-%Y') }

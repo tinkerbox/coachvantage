@@ -3,7 +3,7 @@
 		%img.img_circle{src: '/assets/avatar/john.jpg'}
 	.info_detail_large.pull-left
 		%div#name #{@contact.name}
-		%div#type #{@contact.salutation}
+		%div#type #{@contact.contact_type}
 		%div#phone #{@contact.mobile}
 		%a{href: 'mailto:#'}
 			#div#email #{@contact.email}
