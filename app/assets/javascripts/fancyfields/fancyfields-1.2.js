@@ -484,7 +484,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                         // set dropdown for mobile - use only the dummy button
                         if (_ffIsMobile){
                             $wrapElement.append($dummyObject.append($dummyButton)).insertAfter($curObj.addClass("mobileSelect"));
-                            $dummyObject.append($curObj.css({"width" : $wrapElement.width() ,"height": $wrapElement.innerHeight() }));
+                            $dummyObject.append($curObj.css({"width" : $wrapElement.width() ,"height": "28px" }));
                              $dummyButton.click(function () {
                                 $curObj.trigger("click");
                              });
@@ -575,10 +575,10 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                 $menuElementWrapper.height(0);
                             }
                             else{
-                                $menuElementWrapper.css("top", $wrapElement.height());
+                                $menuElementWrapper.css("top", "28px");
                             }
 
-                            $dummyButton.css("height", $wrapElement.innerHeight());
+                            $dummyButton.css("height", "28px");
 
                             // select button click
                             $dummyButton.click(function () {
@@ -599,7 +599,7 @@ var _ffIsMobile = (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.u
                                             });
                                         }else{
                                             $menuElementWrapper.show(0);
-                                            $menuElementWrapper.animate({height:menuHeight,top:"-"+menuHeight+"px"},300, function () {
+                                            $menuElementWrapper.animate({height:menuHeight,top:"-"+menuHeight+"px"},100, function () {
                                                 checkSelectPosition($menuElement);
                                                 $menuListWrapper.focus();
                                             });

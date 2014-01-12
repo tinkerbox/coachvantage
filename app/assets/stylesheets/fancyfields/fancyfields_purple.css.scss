@@ -190,6 +190,20 @@ body.purple {
 	.scrollingHandle {width:24px;padding-top:20px;background:url(/assets/fancyfields/scrollingHandleTop.png) no-repeat 0 0;}
 	.scrollingHandleBottom{width:24px;background:url(/assets/fancyfields/scrollingHandleBottom.png) no-repeat 0px bottom}
 
+/* style for select box with icons & select with groups */
+  .ffSelectMenuMid UL{background-color:#ffffff;}
+  .ffSelectMenuMid UL LI{background-color:transparent;}
+  .ffSelectWrapper .icons{padding-left:25px!important;}
+  .ffSelectWrapper .icons.icon1{background:url(1.png) no-repeat 6px 7px ;}
+  .ffSelectWrapper .icons.icon2{background:url(2.png) no-repeat 6px 7px ;}
+  .ffSelectWrapper .icons.icon3{background:url(3.png) no-repeat 6px 7px ;}
+  .ffSelectWrapper .icons.icon4{background:url(4.png) no-repeat 6px 7px ;}
+  .ffSelectButton i.icons{padding-left:20px!important;background-position:0px 7px!important;height:28px !important;}
+  
+  .groupOption{background:#BF6C68!important;font-weight:bold;color:#000}
+  .groupOption.group1{background:#B5C3D3!important}
+  .groupOption.group2{background:#9DDC18!important}
+  .ffSelectMenuWrapper .ffSelectMenuMidBG .groupOption.disabled SPAN{color:#000;}
 
 
 	/* textarea */

@@ -4,14 +4,14 @@
 	.row.contact_action_bar
 		= link_to 'ADD NEW CONTACT', new_contact_path, class: 'cv_btn pull-left', 'data-toggle' => 'modal', :href => '#new_contact_modal', id: 'new_contact'
 		.contact_action_bar_option.pull-right
-			.label Display data from:
+			.label.label-select Display data from:
 			%select
 				%option ALL TIME
 	%hr
 	.row
 		.frame_caption.pull-left All Contacts
 		.disp_opt_caption.pull-right
-			.label Displaying:
+			.label.label-select Displaying:
 			= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]])
 	.row.contact_list
 		- @contacts.each do |contact|
@@ -40,26 +40,30 @@
 				.row
 					.col-lg-6
 						.form-group
-							.label Salutation
-							= f.select :salutation, options_for_select([["", 0], ["Mr.", "1"], ["Ms.", "2"], ["Mrs.", "3"], ["Dr.", "4"], ["Prof.", "5"]]), class: 'form-control form-control-square'
+							.label.label-select Salutation
+							= f.select :salutation, options_for_select(%w[Mr. Ms. Mrs. Dr. Prof.])
 						.form-group
 							.label Name
 							= f.text_field :first_name, :label => '-', :placeholder => 'First Name', :class => 'form-control form-control-square', :required => true
 							= f.text_field :last_name, :label => '-', :placeholder => 'Last Name', class: 'form-control form-control-square', :required => true
 						.form-group
-							.label Gender
-							= f.select :gender, options_for_select([["", "1"], ["Male", "2"], ["Female", "3"]]), class: 'form-control form-control-square', :required => true
+							.label.label-select Gender
+							= f.select :gender, options_for_select([["Male", "2"], ["Female", "3"]]), :required => true
 						.form-group
-							.label Birthday
-							= f.date_select(:birthday, :order => [:month, :day, :year], start_year: Date.today.year - 5, end_year: Date.today.year - 90, class: 'form-control form-control-square')
+							.label.label-select Birthday
+							= f.date_select(:birthday, :order => [:month, :day, :year], start_year: Date.today.year - 5, end_year: Date.today.year - 90)
 						.form-group
 							.label Home Address
 							= f.text_field :home_addr, :placeholder => 'Home Address', class: 'form-control form-control-square'
 						.form-group
-							.label Phone Number
-							= f.phone_field :mobile, :placeholder => 'Mobile', class: 'form-control form-control-square', :required => true
-							= f.phone_field :tel_home, :placeholder => 'Home', class: 'form-control form-control-square'
-							= f.phone_field :tel_office, :placeholder => 'Office', class: 'form-control form-control-square'
+							.label Mobile Phone Number
+							= f.phone_field :mobile, :placeholder => 'Mobile Phone Number', class: 'form-control form-control-square', :required => true
+						.form-group
+							.label Home Phone Number
+							= f.phone_field :tel_home, :placeholder => 'Home Phone Number', class: 'form-control form-control-square'
+						.form-group
+							.label Office Phone Number
+							= f.phone_field :tel_office, :placeholder => 'Office Phone Number', class: 'form-control form-control-square'
 						.form-group
 							.label Email Address
 							= f.email_field :email, :type => 'email', :placeholder => 'Email Address', class: 'form-control form-control-square', :required => true
