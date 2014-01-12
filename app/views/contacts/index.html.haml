@@ -28,7 +28,7 @@
 					.info_detail.pull-left
 						%a{href: contact_notes_path(contact[:id])}
 							%div#name #{contact.name}
-						%div#type #{contact.salutation}
+						%div#type #{contact.contact_type}
 						%div#phone #{contact.mobile}
 						%a{href: 'mailto:#'}
 							#div#email #{contact.email}
