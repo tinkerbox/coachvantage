@@ -8,43 +8,51 @@
 			= render 'contacts/shownav'
 		.row.contact_description
 			.contact_invoices
-				.frame_caption.pull-left Outstanding Invoices
-				.row.contact_upcomming_sessions
-					.table-responsive
-						%table.cv_table.table.contact_table
-							%thead
+				.frame_caption.outstanding_title Outstanding Invoices
+				.table-responsive
+					%table.cv_table.contact_table.table
+						%thead
+							%tr
+								%th#date_sent Date Sent
+								%th#date_due Date Due
+								%th#amount Amount
+								%th#action
+						%tbody
+							- 3.times do
 								%tr
-									%th#date_time Date / Time
-									%th#location Location
-									%th#action
-							%tbody
-								- 3.times do |i|
-									%tr
-										%td 12 November 2013
-										%td 84 Riverina View, Pasir Ris.
-										%td
-											= link_to 'LOG SESSION', '#', class: 'cv_btn us_action_log cv_td_action_pos hidden-xs', id: 'log'
-											= link_to '', '#', class: 'i fa fa-circle cv_td_action_pos visible-xs', id: 'record'
-											= link_to '', '#', class: 'i fa fa-edit cv_td_action_pos', id: 'edit'
-											= link_to '', '#', class: 'i fa fa-times cv_td_action_pos', id: 'delete'
-											.div_clear
-				.frame_caption.pull-left Paid Invoices
-				.row.contact_upcomming_sessions
-					.table-responsive
-						%table.cv_table.table.contact_table
-							%thead
+									%td
+										%p 30 December 2013
+										%p 12.00pm
+									%td
+										%p 30 December 2013
+										%p 12.00pm
+									%td
+										%p $2,000
+									%td
+										= link_to '', '#', class: 'i fa fa-circle visible-xs cv_td_action_pos', id: 'action_record'
+										= link_to 'VIEW INVOICE', '#', class: 'cv_btn hidden-xs cv_td_action_pos', id: 'btn_record'
+										= link_to '', '#', class: 'i fa fa-pencil cv_td_action_pos', id: 'edit'
+				.frame_caption.outstanding_title Outstanding Invoices
+				.table-responsive
+					%table.cv_table.contact_table.table
+						%thead
+							%tr
+								%th#date_sent Date Sent
+								%th#date_due Date Due
+								%th#amount Amount
+								%th#action
+						%tbody
+							- 3.times do
 								%tr
-									%th#date_time Date / Time
-									%th#location Location
-									%th#action
-							%tbody
-								- 3.times do |i|
-									%tr
-										%td 12 November 2013
-										%td 84 Riverina View, Pasir Ris.
-										%td
-											= link_to 'LOG SESSION', '#', class: 'cv_btn us_action_log cv_td_action_pos hidden-xs', id: 'log'
-											= link_to '', '#', class: 'i fa fa-circle cv_td_action_pos visible-xs', id: 'record'
-											= link_to '', '#', class: 'i fa fa-edit cv_td_action_pos', id: 'edit'
-											= link_to '', '#', class: 'i fa fa-times cv_td_action_pos', id: 'delete'
-											.div_clear
+									%td
+										%p 30 December 2013
+										%p 12.00pm
+									%td
+										%p 30 December 2013
+										%p 12.00pm
+									%td
+										%p $2,000
+									%td
+										= link_to '', '#', class: 'i fa fa-circle visible-xs cv_td_action_pos', id: 'action_record'
+										= link_to 'VIEW INVOICE', '#', class: 'cv_btn hidden-xs cv_td_action_pos', id: 'btn_record'
+										= link_to '', '#', class: 'i fa fa-pencil cv_td_action_pos', id: 'edit'

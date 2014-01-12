@@ -123,6 +123,23 @@
 	.invoice_list_table tr td #action_edit {
 		margin-left: 0px;
 	}
+
+	#client_profile #cp_navbar ul {
+		height: 100%;
+	}
+
+	#client_profile #cp_navbar ul li {
+		width: 100%;
+		border: none;
+	}
+
+	.table-responsive {
+		border: none;
+	}
+
+	.contact_table tr td #edit, #delete {
+		margin-top: 0px;
+	}
 }
 
 @media (min-width: $screen-md-min) {
@@ -137,6 +154,31 @@
 	}
 
 	.invoice_list_table tr td #action_edit {
+		margin-left: 10px;
+	}
+
+	#client_profile {
+		margin-top: 20px;
+		min-height: 40px;
+		margin-bottom: 0px;
+	}
+
+	#client_profile #cp_navbar ul {
+		height: 40px;
+		padding: 0px;
+		width: 100%;
+	}
+
+	#client_profile #cp_navbar ul li {
+		text-align: center;
+		border-right: 1px solid white;
+		vertical-align: middle;
+		padding: 0px;
+		width: 20%;
+	}
+
+	.contact_table tr td #edit, #delete {
+		margin-top: 10px;
 		margin-left: 10px;
 	}
 }

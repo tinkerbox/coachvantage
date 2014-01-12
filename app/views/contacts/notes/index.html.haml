@@ -11,11 +11,12 @@
 				#session_notes
 					%p
 						SESSION NOTES
-						%i.fa.fa-plus-circle
+						%a{href: new_contact_note_path}
+							%i.fa.fa-plus-circle
 					%ul
-						- 3.times do
+						- @notes.each do |note|
 							%li
-								%a{href: '#'} 1 August 2013
+								%a{href: edit_contact_note_path(params[:contact_id], note[:id])} #{note.caption}
 				%hr
 				#documents
 					%p

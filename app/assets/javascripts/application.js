@@ -3,6 +3,7 @@
 //= require jquery-ui.custom.min
 //= require bootstrap
 //= require bootbox.min
+//= require bootstrap-datepicker
 //= require fullcalendar.min
 //= require_tree ./fancyfields
 //= require content
