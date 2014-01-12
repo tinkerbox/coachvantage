@@ -11,8 +11,13 @@
 	.row
 		.frame_caption.pull-left All Contacts
 		.disp_opt_caption.pull-right
-			.label.label-select Displaying:
-			= select :email, :status, options_for_select([["canceled", "1"], ["pending", "2"], ["success", "3"]])
+			= form_for(:display_contact, :url => contacts_path, :html => {:method => :post, :class => 'form-vertical'}) do |f|
+				.row
+					.col-md-4
+					.col-md-6
+						= f.text_field :search_name, :placeholder => 'Search', :class => 'form-control form-control-square pull-left'
+					.col-md-1#search_button
+						= f.submit :search, :class => 'cv_btn pull-left'
 	.row.contact_list
 		- @contacts.each do |contact|
 			.contact_info_panel.col-sm-6.col-xs-11.col-md-6.col-lg-4
