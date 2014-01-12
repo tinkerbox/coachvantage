@@ -18,22 +18,19 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = current_user.contacts.create(params[:contact])
-    # email_exist = Contact.where(:email => @contact.email).exists?
+    email_exist = current_user.contacts.where(:email => params[:contact][:email]).exists?
 
-    # if email_exist
-    #   redirect_to contacts_path, alert: 'Contact account is already exist. Confirm or reset the password.'
-    #   return
-    # end
-    puts '=================================='
-    puts @contact.inspect
+    if email_exist
+      redirect_to contacts_path, alert: 'Contact account is already exist. Confirm or reset the password.'
+      return
+    end
+
+    @contact = current_user.contacts.create(params[:contact])
+
     if @contact.save
-      puts 'Succeed'
       redirect_to contacts_path, notice: 'Succeed'
     else
-      puts 'Failed'
       redirect_to contacts_path, alert: 'FAiled'
     end
-    puts '=================================='
   end
 end

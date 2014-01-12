@@ -72,6 +72,9 @@
 							= f.text_field :skype_id, :placeholder => 'Skype ID', class: 'form-control form-control-square', :required => true
 					.col-lg-6
 						.form-group
+							.label.label-select Contact Type
+							= f.select :gender, options_for_select(["Current Client", "Hot Lead", "Prospect", "Past Client"])
+						.form-group
 							.label Business Title
 							= f.text_field :biz_title, :placeholder => 'Business Title', class: 'form-control form-control-square'
 						.form-group
