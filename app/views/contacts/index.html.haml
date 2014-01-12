@@ -78,7 +78,7 @@
 					.col-lg-6
 						.form-group
 							.label.label-select Contact Type
-							= f.select :gender, options_for_select(["Current Client", "Hot Lead", "Prospect", "Past Client"])
+							= f.select :contact_type, options_for_select(["Current Client", "Hot Lead", "Prospect", "Past Client"])
 						.form-group
 							.label Business Title
 							= f.text_field :biz_title, :placeholder => 'Business Title', class: 'form-control form-control-square'
