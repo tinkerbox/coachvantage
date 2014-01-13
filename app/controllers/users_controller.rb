@@ -30,6 +30,8 @@ class UsersController < ApplicationController
   def update_setting
     authorize! :update, @user, :message => 'You have no authorization.'
     @user = User.find(params[:id])
+		puts '-------------------------------'
+		puts params[:user].inspect
     if @user.update_attributes(params[:user])
       redirect_to settings_users_path, :notice => "Your Settings is updated."
     else
