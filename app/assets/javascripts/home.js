@@ -7,3 +7,19 @@ $(function(){
     }
 	});
 })
+
+$(document).ready(function() {
+	$("#user_avatar").on("change", function() {
+		if (this.files && this.files[0]) {
+			var reader = new FileReader();
+		
+			reader.onload = function (e) {
+				$('#avartar')
+					.prop('src', e.target.result);
+			};
+		
+			reader.readAsDataURL(this.files[0]);
+//			$("#photo_form").submit();
+		}
+	});
+});
