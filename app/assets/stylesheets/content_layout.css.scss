@@ -117,6 +117,40 @@ body {
 	text-decoration: none;
 }
 
+.content_header #current_user_option {
+	margin-right: 10px;
+}
+
+.content_header #user_option {
+	margin: 0px;
+	padding: 5px;
+}
+
+.content_header #user_option:hover {
+	background-color: lightgrey;
+}
+
+.content_header #user_option_avatar {
+	width: 40px;
+	height: 40px;
+	margin-top: -20px;
+}
+
+.content_header #welcome_user {
+	max-width: 100%;
+	display: inline-block;
+	line-height: 15px;
+	overflow: hidden;
+}
+
+.content_header #welcome_arrow {
+	color: blue;
+}
+
+.content_header #user_option_list {
+	background-color: grey;
+}
+
 .content_yield {
 	margin-top: 40px;
 	margin-left: 40px;

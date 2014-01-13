@@ -9,17 +9,22 @@ $(function(){
 })
 
 $(document).ready(function() {
-	$("#user_avatar").on("change", function() {
-		if (this.files && this.files[0]) {
+	$("#avatar_img").on('click', function() {
+		$("#user_avatar").click();
+	});
+	
+	$("#user_avatar").on("change", function(input) {
+		evt = input.target;
+		if (evt.files && evt.files[0]) {
 			var reader = new FileReader();
-		
+
 			reader.onload = function (e) {
-				$('#avartar')
-					.prop('src', e.target.result);
+				$('#avatar_img')
+					.attr('src', e.target.result)
+					.width(150);
 			};
-		
-			reader.readAsDataURL(this.files[0]);
-//			$("#photo_form").submit();
+
+			reader.readAsDataURL(evt.files[0]);
 		}
 	});
 });

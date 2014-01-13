@@ -22,14 +22,16 @@
 					.content_header
 						%h5.visible-md.visible-.visible-lg.pull-left
 							= yield(:content_name)
-						%ul.nav.navbar-nav.pull-right
+						%ul.nav.navbar-nav.pull-right#current_user_option
 							%li.dropdown
-								%a.dropdown-toggle{"data-close-others" => "true", "data-toggle" => "dropdown", href: "#"}
-									%i.fa.fa-user
-									%span.username
+								%a.dropdown-toggle{"data-close-others" => "true", "data-toggle" => "dropdown", href: "#", id: :user_option}
+									= image_tag current_user.avatar.url(:thumb), id: :user_option_avatar, class: 'img-circle'
+									%span#welcome_user
+										%small Welcome,
+										%br
 										= current_user.name
-									%i.fa.fa-angle-down
-								%ul.dropdown-menu
+									%i.fa.fa-caret-down#welcome_arrow
+								%ul.dropdown-menu#user_option_list
 									%li
 										= link_to settings_users_path do
 											%i.fa.fa-cog
