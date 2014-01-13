@@ -16,7 +16,7 @@
 				= p.input :customized_message, as: :text, input_html: {rows: 8, class: "form-control form-control-square"}
 				
 				%h2 Avatar
-				= f.file_field :avatar
+				= f.input :avatar, :as => :avatar
 				
 			.col-md-4.col-sm-12
 				%h2 Invoice & Billing
