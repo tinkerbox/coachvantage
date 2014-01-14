@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :token, :password, :password_confirmation, :remember_me, :stripe_token, :coupon, :setting_attributes
 	attr_accessible :avatar
 	
-	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => '/assets/avatar/blank_user.jpg'
 
   has_many :contacts
   has_one :setting

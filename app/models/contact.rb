@@ -8,7 +8,7 @@ class Contact < ActiveRecord::Base
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	validates :email, presence: true
-	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => '/assets/avatar/blank_user.jpg'
 
 	belongs_to :user
 
