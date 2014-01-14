@@ -16,7 +16,8 @@
 				= p.input :customized_message, as: :text, input_html: {rows: 8, class: "form-control form-control-square"}
 				
 				%h2 Personal settings
-				= f.input :avatar, as: :avatar
+				.label Avatar
+				%img{id: :avatar_img, src: '/assets/avatar/blank_user.jpg', class: 'img-thumbnail'}
 				= f.file_field :avatar, style: "display: none;"
 				
 			.col-md-4.col-sm-12

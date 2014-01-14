@@ -21,7 +21,7 @@ $(document).ready(function() {
 			reader.onload = function (e) {
 				$('#avatar_img')
 					.attr('src', e.target.result)
-					.width(150);
+					.width(auto).height(100);
 			};
 
 			reader.readAsDataURL(evt.files[0]);
