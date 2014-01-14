@@ -1084,12 +1084,12 @@ fieldset[disabled] .radio,
 }
 .alert.alert-danger,
 .alert.alert-error {
-    background-color: #e74c3c;
-    border: 1px solid #e74c3c;
+    background-color: #bd905c;
+    border: 1px solid #bd905c;
 }
 .alert.alert-success {
-    background-color: #87eb41;
-    border: 1px solid #87eb41;
+    background-color: #00aa3d;
+    border: 1px solid #00aa3d;
 }
 /*------------------------------------*\
     $popover

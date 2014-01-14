@@ -1,6 +1,6 @@
 .client_info
 	.avatar_large.pull-left
-		%img.img_circle{src: '/assets/avatar/john.jpg'}
+		%img.img_circle{src: "#{@contact.avatar.url(:thumb)}"}
 	.info_detail_large.pull-left
 		%div#name #{@contact.name}
 		%div#type #{@contact.contact_type}

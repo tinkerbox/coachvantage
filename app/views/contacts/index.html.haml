@@ -24,7 +24,7 @@
 				.client_info
 					.avatar_normal.pull-left
 						%a{href: contact_notes_path(contact[:id])}
-							%img.img_circle{src: '/assets/avatar/john.jpg'}
+							%img.img_circle{src: "#{contact.avatar.url(:thumb)}"}
 					.info_detail.pull-left
 						%a{href: contact_notes_path(contact[:id])}
 							%div#name #{contact.name}
@@ -35,7 +35,7 @@
 					.contact_info_expand.pull-right
 						%i.fa.fa-chevron-right
 #new_contact_modal.modal.fade.new_contact
-	= form_for(:contact, :url => contacts_path, :html => {:method => :post, :class => 'form' }) do |f|
+	= simple_form_for(:contact, :url => contacts_path, :html => {:method => :post, :class => 'form' }) do |f|
 		.col-lg-2
 		.col-lg-8{style: 'background-color: #f3f3f3;'}
 			.modal-header
@@ -79,6 +79,10 @@
 						.form-group
 							.label.label-select Contact Type
 							= f.select :contact_type, options_for_select(["Current Client", "Hot Lead", "Prospect", "Past Client"])
+						.form-group
+							.label Contact Avatar
+							%img{id: :contact_img, src: '/assets/avatar/blank_user.jpg', class: 'img-thumbnail'}
+							= f.file_field :avatar, style: "display: none;"
 						.form-group
 							.label Business Title
 							= f.text_field :biz_title, :placeholder => 'Business Title', class: 'form-control form-control-square'

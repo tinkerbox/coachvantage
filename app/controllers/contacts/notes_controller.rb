@@ -4,7 +4,10 @@ class Contacts::NotesController < ApplicationController
 	def new
   	@contact = Contact.find(params[:contact_id])
 		@note = @contact.notes.create(:caption => 'Untitled')
-		redirect_to contact_notes_path
+
+    respond_to do |format|
+      format.json { render :json => @note }
+    end
 	end
 
   def index
@@ -12,14 +15,23 @@ class Contacts::NotesController < ApplicationController
   	@notes = @contact.notes.all
   end
 
+  def show
+    @contact = Contact.find(params[:contact_id])
+    @note = Note.new(params[:note])
+    if params[:commit] == 'SAVE NOTE'
+    elsif params[:commit] == 'DELETE NOTE'
+    end
+
+    redirect_to contact_notes_path
+  end
+
   def edit
   	@contact = Contact.find(params[:contact_id])
   	@note = @contact.notes.find(params[:id])
 
-  	redirect_to contact_notes_path
-  	# respond_to do |format|
-   #    format.json { render :json => @note }
-   #  end
+  	respond_to do |format|
+      format.json { render :json => @note }
+    end
   end
 
   def show

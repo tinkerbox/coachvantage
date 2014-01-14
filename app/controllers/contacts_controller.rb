@@ -30,7 +30,7 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to contacts_path, notice: 'Succeed'
     else
-      redirect_to contacts_path, alert: 'FAiled'
+      redirect_to contacts_path, alert: 'Failed'
     end
   end
 end

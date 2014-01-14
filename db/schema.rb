@@ -11,21 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140112223011) do
+ActiveRecord::Schema.define(:version => 20140113150906) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "user_id"
     t.string   "salutation"
-    t.string   "first_name",   :default => "", :null => false
-    t.string   "last_name",    :default => "", :null => false
-    t.string   "gender",       :default => "", :null => false
+    t.string   "first_name",          :default => "", :null => false
+    t.string   "last_name",           :default => "", :null => false
+    t.string   "gender",              :default => "", :null => false
     t.date     "birthday"
     t.string   "home_addr"
     t.string   "mobile"
     t.string   "tel_home"
     t.string   "tel_office"
-    t.string   "email",        :default => "", :null => false
-    t.string   "skype_id",     :default => "", :null => false
+    t.string   "email",               :default => "", :null => false
+    t.string   "skype_id",            :default => "", :null => false
     t.string   "biz_title"
     t.string   "company_name"
     t.string   "company_addr"
@@ -33,9 +33,13 @@ ActiveRecord::Schema.define(:version => 20140112223011) do
     t.string   "life_obj"
     t.string   "biz_obj"
     t.string   "profile"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.string   "contact_type"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "contacts", ["email"], :name => "index_contacts_on_email", :unique => true

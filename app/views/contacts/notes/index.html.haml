@@ -11,12 +11,12 @@
 				#session_notes
 					%p
 						SESSION NOTES
-						%a{href: new_contact_note_path}
+						= link_to new_contact_note_path, id: :add_new_contact_note, remote: true do
 							%i.fa.fa-plus-circle
-					%ul
+					%ul#notes_list
 						- @notes.each do |note|
 							%li
-								%a{href: edit_contact_note_path(params[:contact_id], note[:id])} #{note.caption}
+								= link_to note.caption, edit_contact_note_path(params[:contact_id], note[:id]), remote: true 
 				%hr
 				#documents
 					%p
@@ -27,7 +27,9 @@
 							%li
 								%a{href: '#'} Payment contract
 			.col-md-9.notes_content
-				= form_for(:note, :url => contact_notes_path(params[:contact_id]), :html => {:method => :post, :class => 'form' }) do |f|
+				= form_for(:note, :url => contact_notes_path(params[:contact_id]), remote: true, :html => {:method => :put, :class => 'form' }) do |f|
+					.form-group
+						.label{id: :new_note_caption, style: "display: none;"} Enter date or subject header for your note…
 					.form-group
 						= f.text_field :caption, class: 'form-control form-control-square'
 					.form-group

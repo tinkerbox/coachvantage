@@ -3,11 +3,12 @@ class Contact < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :gender, :home_addr, :interests, :tel_office
   attr_accessible :life_obj, :mobile, :profile, :salutation, :skype_id, :tel_home
   attr_accessible :contact_type
-
+	attr_accessible :avatar
+	
 	validates :first_name, presence: true
 	validates :last_name, presence: true
-	validates :gender, presence: true
 	validates :email, presence: true
+	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
 	belongs_to :user
 

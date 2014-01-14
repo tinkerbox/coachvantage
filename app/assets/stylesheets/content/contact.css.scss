@@ -98,6 +98,11 @@
 	display: none;
 }
 
+.new_contact #contact_img {
+	height: 100px;
+	width: auto;
+}
+
 .contact_description {
 	margin: 0px;
 	padding: 0px;
@@ -138,8 +143,12 @@
 	text-decoration: none;
 }
 
+.notes_side ul li a.active {
+	font-weight: bold;
+}
+
 .notes_content {
-	padding: 20px 30px;
+	padding: 5px 30px;
 }
 
 .contact_sessions {
