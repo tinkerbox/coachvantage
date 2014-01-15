@@ -46,6 +46,10 @@
 	margin-right: 15px;
 }
 
+#contact_type_list {
+	background-color: grey;
+}
+
 #start_session {
 	margin-top: 40px;
 }
@@ -105,10 +109,14 @@
 
 .contact_description {
 	margin: 0px;
-	padding: 0px;
 	padding-top: 20px;
 	min-height: 600px;
 	background-color: white;
+}
+
+.contact_description #contact_img {
+	height: 100px;
+	width: auto;
 }
 
 .notes_side {

@@ -16,12 +16,6 @@ class Contacts::NotesController < ApplicationController
   end
 
   def show
-    @contact = Contact.find(params[:contact_id])
-    @note = Note.new(params[:note])
-    if params[:commit] == 'SAVE NOTE'
-    elsif params[:commit] == 'DELETE NOTE'
-    end
-
     redirect_to contact_notes_path
   end
 
@@ -34,6 +28,19 @@ class Contacts::NotesController < ApplicationController
     end
   end
 
-  def show
+  def update
+    @contact = Contact.find(params[:contact_id])
+    @note = @contact.notes.find(params[:id])
+
+    @note.update_attributes(params[:note])
+    redirect_to contact_notes_path
+  end
+
+  def destroy
+    @contact = Contact.find(params[:contact_id])
+    @note = @contact.notes.find(params[:id])
+
+    @note.destory
+    redirect_to contact_notes_path
   end
 end

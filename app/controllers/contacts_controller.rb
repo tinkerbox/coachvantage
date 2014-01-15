@@ -33,4 +33,10 @@ class ContactsController < ApplicationController
       redirect_to contacts_path, alert: 'Failed'
     end
   end
+
+  def update
+    contact = Contact.find(params[:id])
+    contact.update_attributes(params[:contact])
+    redirect_to contact_details_path(params[:id])
+  end
 end

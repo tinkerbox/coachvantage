@@ -3,5 +3,6 @@ class DashboardsController < ApplicationController
   layout 'content_layout'
   
   def index
+  	@contacts = current_user.contacts
   end
 end

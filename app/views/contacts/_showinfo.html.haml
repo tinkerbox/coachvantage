@@ -2,8 +2,25 @@
 	.avatar_large.pull-left
 		%img.img_circle{src: "#{@contact.avatar.url(:thumb)}"}
 	.info_detail_large.pull-left
-		%div#name #{@contact.name}
-		%div#type #{@contact.contact_type}
+		%div#name
+			#{@contact.name}
+			
+		%div#type 
+			.dropdown{style: 'display: inline-block;'}
+				%a.dropdown-toggle{"data-close-others" => "true", "data-toggle" => "dropdown", href: "#", id: :user_option}
+					#{@contact.contact_type}
+					%i.fa.fa-caret-down
+				%ul.dropdown-menu#contact_type_list
+					%li
+						= simple_form_for(:contact, :url => contact_path(params[:contact_id]), method: :put)do |f|
+							.row
+								.col-lg-12
+									= f.hidden_field :contact_type, :value => "Current Client"
+									= f.submit "Current Client", class: ''
+					%li
+						= link_to destroy_user_session_path, method: :delete do
+							%i.fa.fa-sign-out
+							LOG OUT
 		%div#phone #{@contact.mobile}
 		%a{href: 'mailto:#'}
 			#div#email #{@contact.email}

@@ -7,12 +7,69 @@
 		.row
 			= render 'contacts/shownav'
 		.row.contact_description
-			.contact_details
-				- 3.times do
-					.col-md-5.col-xs-11
-						%h4
-							Lorem lpsum 
-							%i.fa.fa-pencil
-						%p At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-						%br
-					.col-md-1.col-xs-1
+			= simple_form_for(:contact, :url => contact_path(params[:contact_id]), :html => {:method => :put, :class => 'form' }) do |f|
+				.row
+					.col-lg-5
+						.form-group
+							.label.label-select Salutation
+							= f.select :salutation, options_for_select(%w[Mr. Ms. Mrs. Dr. Prof.]), value: @contact.salutation
+						.form-group
+							.label Name
+							= f.text_field :first_name, :label => '-', :placeholder => 'First Name', :class => 'form-control form-control-square', :required => true
+							= f.text_field :last_name, :label => '-', :placeholder => 'Last Name', class: 'form-control form-control-square', :required => true
+						.form-group
+							.label.label-select Gender
+							= f.select :gender, options_for_select(%w[Male Female]), :required => true
+						.form-group
+							.label.label-select Birthday
+							= f.date_select(:birthday, :order => [:month, :day, :year], start_year: Date.today.year - 5, end_year: Date.today.year - 90)
+						.form-group
+							.label Home Address
+							= f.text_field :home_addr, :placeholder => 'Home Address', class: 'form-control form-control-square'
+						.form-group
+							.label Mobile Phone Number
+							= f.phone_field :mobile, :placeholder => 'Mobile Phone Number', class: 'form-control form-control-square', :required => true
+						.form-group
+							.label Home Phone Number
+							= f.phone_field :tel_home, :placeholder => 'Home Phone Number', class: 'form-control form-control-square'
+						.form-group
+							.label Office Phone Number
+							= f.phone_field :tel_office, :placeholder => 'Office Phone Number', class: 'form-control form-control-square'
+						.form-group
+							.label Email Address
+							= f.email_field :email, :type => 'email', :placeholder => 'Email Address', class: 'form-control form-control-square', :required => true
+						.form-group
+							.label Skype ID
+							= f.text_field :skype_id, :placeholder => 'Skype ID', class: 'form-control form-control-square', :required => true
+					.col-lg-2
+					.col-lg-5
+						.form-group
+							.label.label-select Contact Type
+							= f.select :contact_type, options_for_select(["Current Client", "Hot Lead", "Prospect", "Past Client"])
+						.form-group
+							.label Contact Avatar
+							%img{id: :contact_img, src: @contact.avatar.url(:thumb), class: 'img-thumbnail'}
+							= f.file_field :avatar, style: "display: none;"
+						.form-group
+							.label Business Title
+							= f.text_field :biz_title, :placeholder => 'Business Title', class: 'form-control form-control-square'
+						.form-group
+							.label Company Name
+							= f.text_field :company_name, :placeholder => 'Company Name', class: 'form-control form-control-square'
+						.form-group
+							.label Company Address
+							= f.text_field :company_addr, :placeholder => 'Company Address', class: 'form-control form-control-square'
+						.form-group
+							.label Personal Interests
+							= f.text_field :interests, :placeholder => 'Personal Interests', class: 'form-control form-control-square'
+						.form-group
+							.label Life Objectives
+							= f.text_field :life_obj, :placeholder => 'Life Objectives', class: 'form-control form-control-square'
+						.form-group
+							.label Business Objectives
+							= f.text_field :biz_obj, :placeholder => 'Business Objectives', class: 'form-control form-control-square'
+						.form-group
+							.label Known Personality Profile
+							= f.text_area :profile, :placeholder => 'Known Personality Profile', class: 'form-control form-control-square', :rows => 4
+				.row.pull-right
+					= f.submit 'SAVE CONTACT', class: 'cv_btn'
