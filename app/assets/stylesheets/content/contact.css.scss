@@ -37,7 +37,7 @@
 	background-color: white;
 	padding: 15px 0px 15px 5px;
 	border: 15px solid #eee;
-	// margin: 10px;
+	margin: 10px;
 }
 
 .contact_info_expand {
@@ -48,16 +48,35 @@
 
 #contact_type_list {
 	background-color: grey;
+  	z-index: 1;
+}
+
+#action_bar {
+	margin-top: 40px;	
+}
+
+#action_bar a i {
+	font-size: 30px;
+	vertical-align: middle;
+}
+
+#action_bar a:hover {
+	text-decoration: none;
 }
 
 #start_session {
-	margin-top: 40px;
+	margin-left: 20px;
 }
 
 #client_profile {
 	margin-top: 20px;
 	min-height: 40px;
 	margin-bottom: 0px;
+}
+
+.client_info #name i {
+	color: lightgrey;
+	font-size: 15px;
 }
 
 #client_profile #cp_navbar ul {

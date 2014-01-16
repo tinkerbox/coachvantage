@@ -8,7 +8,7 @@
 			= render 'contacts/shownav'
 		.row.contact_description
 			.contact_details
-				= simple_form_for(@contact, :url => contact_path(params[:contact_id]), :html => {:method => :put, :class => 'form' }) do |f|
+				= simple_form_for(:contact, :url => contact_path(params[:contact_id]), :html => {:method => :put, :class => 'form' }) do |f|
 					.row
 						.col-lg-5
 							.form-group

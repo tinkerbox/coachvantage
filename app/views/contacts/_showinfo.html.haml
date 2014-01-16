@@ -1,25 +1,28 @@
 .client_info
 	.avatar_large.pull-left
-		%img.img_circle{src: "#{@contact.avatar.url(:thumb)}"}
+		= simple_form_for(:contact, :url => update_contact_info_contact_path(params[:contact_id]), html: { method: :put, id: :contact_avatar_form}) do |f|
+			%img{id: :contact_info_img, src: @contact.avatar.url(:thumb), class: 'img_circle'}
+			= f.file_field :avatar, id: :contact_info_avatar, style: "display: none;"
 	.info_detail_large.pull-left
 		%div#name
 			#{@contact.name}
-			
+			%a{href: contact_details_path(params[:contact_id])}
+				%i.fa.fa-pencil
 		%div#type 
+			= simple_form_for(:contact, :url => update_contact_info_contact_path(params[:contact_id]), html: {method: :put, id: :current_client_type})do |f|
+				= f.hidden_field :contact_type, :value => "Current Client"
 			.dropdown{style: 'display: inline-block;'}
 				%a.dropdown-toggle{"data-close-others" => "true", "data-toggle" => "dropdown", href: "#", id: :user_option}
 					#{@contact.contact_type}
 					%i.fa.fa-caret-down
 				%ul.dropdown-menu#contact_type_list
-					%li
-						= simple_form_for(:contact, :url => contact_path(params[:contact_id]), html: {method: :put, id: :current_client_type})do |f|
-							= f.hidden_field :contact_type, :value => "Current Client"
-						= link_to "Current Client", '#', :onclick => "changeClientType('Current Client');"
-					%li
-						= link_to destroy_user_session_path, method: :delete do
-							%i.fa.fa-sign-out
-							LOG OUT
-		%div#phone #{@contact.mobile}
+					- ["Current Client", "Hot Lead", "Prospect", "Past Client"].each do |client_type|
+						%li
+							= link_to client_type, '#', :onclick => "changeClientType('#{client_type}');"
+		%div#phone Mobile: #{@contact.mobile}
 		%a{href: 'mailto:#'}
 			#div#email #{@contact.email}
-= link_to 'START SESSION', '#', class: 'cv_btn pull-right', id: 'start_session'
+.pull-right#action_bar
+	%a{href: '#', class: 'cv_btn'}
+		%i.fa.fa-skype
+	= link_to 'LOG SESSION', '#', class: 'cv_btn', id: 'start_session'

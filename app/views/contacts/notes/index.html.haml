@@ -27,7 +27,7 @@
 							%li
 								%a{href: '#'} Payment contract
 			.col-md-9.notes_content
-				= form_for(:note, :url => contact_note_path(params[:contact_id], params[:id]), :method => :put, :html => {:class => 'form' }) do |f|
+				= form_for(:note, :url => contact_notes_path(params[:contact_id]), :method => :post, remote: true, :html => {:class => 'form', id: :contact_note_form}) do |f|
 					.form-group
 						.label{id: :new_note_caption, style: "display: none;"} Enter date or subject header for your note…
 					.form-group
@@ -35,5 +35,5 @@
 					.form-group
 						= f.text_area :content, class: 'form-control form-control-square', :rows => 20
 					.form-group.pull-right
-						= link_to 'DELETE NOTE', contact_note_path(params[:contact_id], 1), method: :delete, class: 'cv_btn'
-						= f.submit 'SAVE NOTE', class: 'cv_btn'
+						= link_to 'DELETE NOTE', '#', class: 'cv_btn', id: :delete_note_btn
+						= f.submit 'SAVE NOTE', class: 'cv_btn', id: :save_note_btn

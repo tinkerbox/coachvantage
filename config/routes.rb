@@ -26,6 +26,9 @@ Coachvantage::Application.routes.draw do
   resources :documents
   resources :invoices
   resources :contacts do
+    member do
+      put :update_contact_info
+    end
     scope module: 'contacts' do
       resources :notes
       resources :details

@@ -13,11 +13,23 @@ class Contacts::NotesController < ApplicationController
   def index
   	@contact = Contact.find(params[:contact_id])
   	@notes = @contact.notes.all
-    params[:id] = -1
   end
 
   def show
     redirect_to contact_notes_path
+  end
+
+  def create
+    if params[:note][:caption].nil?
+      redirect_to :back and return
+    end
+
+    @contact = Contact.find(params[:contact_id])
+    @contact.notes.create params[:note]
+
+    respond_to do |format|
+      format.json { render :json => data }
+    end
   end
 
   def edit
@@ -34,14 +46,16 @@ class Contacts::NotesController < ApplicationController
     @note = @contact.notes.find(params[:id])
 
     @note.update_attributes(params[:note])
-    redirect_to contact_notes_path
+    # redirect_to contact_notes_path
+
+    respond_to do |format|
+      format.json { render :json => @note }
+    end
   end
 
   def destroy
     @contact = Contact.find(params[:contact_id])
-    @note = @contact.notes.find(params[:id])
-
-    @note.destory
+    @note = @contact.notes.find(params[:id]).delete
     redirect_to contact_notes_path
   end
 end

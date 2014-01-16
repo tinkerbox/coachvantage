@@ -27,7 +27,10 @@
 							%img.img_circle{src: "#{contact.avatar.url(:thumb)}"}
 					.info_detail.pull-left
 						%a{href: contact_notes_path(contact[:id])}
-							%div#name #{contact.name}
+							%div#name
+								#{contact.name}
+								%a{href: contact_details_path(contact[:id])}
+									%i.fa.fa-pencil
 						%div#type #{contact.contact_type}
 						%div#phone #{contact.mobile}
 						%a{href: 'mailto:#'}

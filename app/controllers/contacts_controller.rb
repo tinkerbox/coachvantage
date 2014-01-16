@@ -34,10 +34,18 @@ class ContactsController < ApplicationController
     end
   end
 
+  def update_contact_info
+    contact = Contact.find(params[:id])
+    contact.update_attributes(params[:contact])
+    
+    session[:return_to] ||= request.referer
+    redirect_to session.delete(:return_to)
+  end
+
   def update
     contact = Contact.find(params[:id])
     contact.update_attributes(params[:contact])
-    session[:return_to] ||= request.referer
-    redirect_to session.delete(:return_to), notice: "Contact is updated successfully."
+
+    redirect_to contact_details_path(params[:id]), notice: "Contact is updated successfully."
   end
 end
