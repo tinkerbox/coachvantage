@@ -12,11 +12,9 @@
 					%i.fa.fa-caret-down
 				%ul.dropdown-menu#contact_type_list
 					%li
-						= simple_form_for(:contact, :url => contact_path(params[:contact_id]), method: :put)do |f|
-							.row
-								.col-lg-12
-									= f.hidden_field :contact_type, :value => "Current Client"
-									= f.submit "Current Client", class: ''
+						= simple_form_for(:contact, :url => contact_path(params[:contact_id]), html: {method: :put, id: :current_client_type})do |f|
+							= f.hidden_field :contact_type, :value => "Current Client"
+						= link_to "Current Client", '#', :onclick => "changeClientType('Current Client');"
 					%li
 						= link_to destroy_user_session_path, method: :delete do
 							%i.fa.fa-sign-out

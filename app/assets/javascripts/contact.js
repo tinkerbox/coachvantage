@@ -29,9 +29,6 @@ $(document).ready(function() {
 	});
 
 	$("#add_new_contact_note").on("ajax:success", function(e, data, status, xhr) {
-		// $("#note_caption").val(data.caption);
-		// $("#note_content").val(data.content);
-		// $("#new_note_caption").css("display", "inline-block");
 		$("#note_caption").focus();
 
 		new_note = $("#notes_list").append("<li><a href='/contacts/" + 

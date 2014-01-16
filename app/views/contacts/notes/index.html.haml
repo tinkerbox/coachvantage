@@ -27,7 +27,7 @@
 							%li
 								%a{href: '#'} Payment contract
 			.col-md-9.notes_content
-				= form_for(:note, :url => contact_note_path(params[:contact_id], 1), :method => :put, :html => {:class => 'form' }) do |f|
+				= form_for(:note, :url => contact_note_path(params[:contact_id], params[:id]), :method => :put, :html => {:class => 'form' }) do |f|
 					.form-group
 						.label{id: :new_note_caption, style: "display: none;"} Enter date or subject header for your note…
 					.form-group

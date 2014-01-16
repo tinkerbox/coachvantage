@@ -13,6 +13,7 @@ class Contacts::NotesController < ApplicationController
   def index
   	@contact = Contact.find(params[:contact_id])
   	@notes = @contact.notes.all
+    params[:id] = -1
   end
 
   def show
