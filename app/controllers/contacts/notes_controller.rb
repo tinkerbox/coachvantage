@@ -25,10 +25,10 @@ class Contacts::NotesController < ApplicationController
     end
 
     @contact = Contact.find(params[:contact_id])
-    @contact.notes.create params[:note]
+    @note = @contact.notes.create params[:note]
 
     respond_to do |format|
-      format.json { render :json => data }
+      format.json { render :json => @note }
     end
   end
 
