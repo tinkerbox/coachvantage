@@ -17,6 +17,10 @@ $(document).ready(function() {
 		}
 	});
 
+	$("#display_contact_display").on('change', function() {
+		alert(1);
+	});
+
 	$("#contact_info_img").on('click', function() {
 		$("#contact_info_avatar").click();
 	});

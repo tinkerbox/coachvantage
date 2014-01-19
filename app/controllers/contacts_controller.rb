@@ -6,6 +6,9 @@ class ContactsController < ApplicationController
     @contacts = current_user.contacts
   end
 
+  def index_by_type
+  end
+
   def new
     @contact = Contact.new
   end
