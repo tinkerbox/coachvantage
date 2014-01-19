@@ -19,6 +19,9 @@
 								= f.text_field :first_name, :label => '-', :placeholder => 'First Name', :class => 'form-control form-control-square', :required => true
 								= f.text_field :last_name, :label => '-', :placeholder => 'Last Name', class: 'form-control form-control-square', :required => true
 							.form-group
+								.label.label-select Contact Type
+								= f.select :contact_type, options_for_select(["Current Client", "Hot Lead", "Prospect", "Past Client"], @contact.contact_type)
+							.form-group
 								.label.label-select Gender
 								= f.select :gender, options_for_select(%w[Male Female], @contact.gender), :required => true
 							.form-group
@@ -44,9 +47,6 @@
 								= f.text_field :skype_id, :placeholder => 'Skype ID', class: 'form-control form-control-square', :required => true
 						.col-lg-2
 						.col-lg-5
-							.form-group
-								.label.label-select Contact Type
-								= f.select :contact_type, options_for_select(["Current Client", "Hot Lead", "Prospect", "Past Client"], @contact.contact_type)
 							.form-group
 								.label Contact Avatar
 								%img{id: :contact_img, src: @contact.avatar.url(:thumb), class: 'img-thumbnail'}
