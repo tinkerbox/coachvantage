@@ -18,7 +18,7 @@
 				%ul.dropdown-menu#contact_type_list
 					- ["Current Client", "Hot Lead", "Prospect", "Past Client"].each do |client_type|
 						%li
-							= link_to :client_type, '#', :onclick => "changeClientType('#{client_type}');"
+							= link_to client_type, '#', :onclick => "changeClientType('#{client_type}');"
 		%div#phone Mobile: #{@contact.mobile}
 		%a{href: 'mailto:#'}
 			#div#email #{@contact.email}
