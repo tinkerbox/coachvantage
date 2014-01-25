@@ -47,6 +47,18 @@ body.blue {
 	.content_header h5 a {
 		color: #9f9f9f;
 	}
+
+	#client_profile #cp_navbar {
+		background-color: #00a1cb;
+	}
+
+	#client_profile #cp_navbar ul li a:hover {
+		background-color: #28bce3;
+	}
+
+	#client_profile #cp_navbar ul li a:active {
+		background-color: #0283a5;
+	}
 }
 
 body.purple {
@@ -97,5 +109,17 @@ body.purple {
 
 	.content_header h5 a {
 		color: #9f9f9f;
+	}
+
+	#client_profile #cp_navbar {
+		background-color: #573f73;
+	}
+
+	#client_profile #cp_navbar ul li a:hover {
+		background-color: #38294A;
+	}
+
+	#client_profile #cp_navbar ul li.active a {
+		background-color: #38294A;
 	}
 }

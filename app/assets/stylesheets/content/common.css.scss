@@ -106,6 +106,19 @@ input[type="submit"] {
 	font-weight: bold;
 }
 
+.cv_datepicker_btn {
+	font-size: 16px;
+	color: #ffffff;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 0px;
+	border-bottom: 3px solid #788e43;
+	background-color: #8cc10d;
+	padding: 6px 10px;
+	font-weight: bold;
+}
+
 .cv_signin_btn {
 	font-size: 15px;
 	color: #ffffff;
@@ -118,7 +131,7 @@ input[type="submit"] {
 	font-weight: bold;
 }
 
-.cv_signin_btn:hover {
+.cv_signin_btn:hover, .cv_datepicker_btn:hover {
 	border-bottom: 3px solid #788e43;
 	color: #ffffff;
 	background-color: #a1d428;
@@ -136,7 +149,7 @@ input[type="submit"] {
 	color: white;
 }
 
-.cv_btn:active {
+.cv_btn:active, .cv_datepicker_btn:active {
 	background-color: #7ea81b;
 	text-decoration: none;
 	color: white;

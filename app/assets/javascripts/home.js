@@ -1,11 +1,16 @@
 $(function(){
-	$("select").fancyfields({
-  	onSelectChange: function (input, text, val){
-  		if (input.attr("id") == "user_setting_attributes_color_scheme") {
-      	$("body").attr("class", "").addClass(val);
-  		}
-    }
-	});
+	// $("select").fancyfields({
+ //  	onSelectChange: function (input, text, val){
+ //  		if (input.attr("id") == "user_setting_attributes_color_scheme") {
+ //      	$("body").attr("class", "").addClass(val);
+ //  		}
+
+ //  		if (input.attr("id") == "display_contact_type") {
+ //  			console.log($("#display_contact"));
+ //  			$("#display_contact").submit();
+ //  		}
+ //    }
+	// });
 })
 
 $(document).ready(function() {

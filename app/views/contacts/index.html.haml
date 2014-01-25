@@ -4,9 +4,9 @@
 	.row.contact_action_bar
 		= link_to 'ADD NEW CONTACT', new_contact_path, class: 'cv_btn pull-left', 'data-toggle' => 'modal', :href => '#new_contact_modal', id: 'new_contact'
 		.contact_action_bar_option.pull-right
-			= form_for(:display_contact, :url => contacts_path, :html => {:method => :post, :class => 'form'}) do |f|
+			= form_for(:display_contact, :url => index_by_type_contacts_path, :html => {:method => :get, :class => 'form', id: :contact_type_list_form}) do |f|
 				.label.label-select Display:
-				= f.select :display, options_for_select(["Current Clients", "Hot Leads", "Prospects", "Past Clients", "All Contacts"])
+				= f.select :type, options_for_select(["Current Clients", "Hot Leads", "Prospects", "Past Clients", "All Contacts"], @current_type)
 	%hr
 	.row
 		.frame_caption.pull-left All Contacts
@@ -62,7 +62,8 @@
 							= f.select :gender, options_for_select(%w[Male Female]), :required => true
 						.form-group
 							.label.label-select Birthday
-							= f.date_select(:birthday, :order => [:month, :day, :year], start_year: Date.today.year - 5, end_year: Date.today.year - 90)
+							.input-group
+								= f.date_select(:birthday, :order => [:month, :day, :year], start_year: Date.today.year - 5, end_year: Date.today.year - 90)
 						.form-group
 							.label Home Address
 							= f.text_field :home_addr, :placeholder => 'Home Address', class: 'form-control form-control-square'

@@ -2,7 +2,7 @@ class Contacts::NotesController < ApplicationController
 	layout 'content_layout'
 
 	def new
-  	@contact = Contact.find(params[:contact_id])
+  	@contact = current_user.contacts.find(params[:contact_id])
 		@note = @contact.notes.create(:caption => 'Untitled')
 
     respond_to do |format|
@@ -11,8 +11,9 @@ class Contacts::NotesController < ApplicationController
 	end
 
   def index
-  	@contact = Contact.find(params[:contact_id])
+  	@contact = current_user.contacts.find(params[:contact_id])
   	@notes = @contact.notes.all
+    @documents = @contact.documents.all
   end
 
   def show
@@ -24,7 +25,7 @@ class Contacts::NotesController < ApplicationController
       redirect_to :back and return
     end
 
-    @contact = Contact.find(params[:contact_id])
+    @contact = current_user.contacts.find(params[:contact_id])
     @note = @contact.notes.create params[:note]
 
     respond_to do |format|
@@ -33,7 +34,7 @@ class Contacts::NotesController < ApplicationController
   end
 
   def edit
-  	@contact = Contact.find(params[:contact_id])
+  	@contact = current_user.contacts.find(params[:contact_id])
   	@note = @contact.notes.find(params[:id])
 
   	respond_to do |format|
@@ -42,7 +43,7 @@ class Contacts::NotesController < ApplicationController
   end
 
   def update
-    @contact = Contact.find(params[:contact_id])
+    @contact = current_user.contacts.find(params[:contact_id])
     @note = @contact.notes.find(params[:id])
 
     @note.update_attributes(params[:note])
@@ -54,7 +55,7 @@ class Contacts::NotesController < ApplicationController
   end
 
   def destroy
-    @contact = Contact.find(params[:contact_id])
+    @contact = current_user.contacts.find(params[:contact_id])
     @note = @contact.notes.find(params[:id]).delete
     redirect_to contact_notes_path
   end

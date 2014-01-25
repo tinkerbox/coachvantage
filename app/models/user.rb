@@ -13,6 +13,9 @@ class User < ActiveRecord::Base
 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => '/assets/avatar/blank_user.jpg'
 
   has_many :contacts
+  has_many :documents, through: :contacts
+  has_many :contracts, through: :contacts
+  has_many :session_logs, through: :contacts
   has_one :setting
 
   accepts_nested_attributes_for :setting

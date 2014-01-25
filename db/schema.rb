@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140113150906) do
+ActiveRecord::Schema.define(:version => 20140125201150) do
 
   create_table "contacts", :force => true do |t|
     t.integer  "user_id"
@@ -44,6 +44,33 @@ ActiveRecord::Schema.define(:version => 20140113150906) do
 
   add_index "contacts", ["email"], :name => "index_contacts_on_email", :unique => true
 
+  create_table "contracts", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "contact_id"
+    t.string   "contract_type"
+    t.integer  "period"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.decimal  "session_duration"
+    t.string   "billing_arrangement"
+    t.decimal  "fees"
+    t.string   "status"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  create_table "documents", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "contact_id"
+    t.string   "name"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+  end
+
   create_table "notes", :force => true do |t|
     t.integer  "contact_id"
     t.string   "caption"
@@ -62,6 +89,16 @@ ActiveRecord::Schema.define(:version => 20140113150906) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "session_logs", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "contact_id"
+    t.date     "date"
+    t.decimal  "duration"
+    t.string   "billing_status"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "settings", :force => true do |t|
     t.integer  "user_id"

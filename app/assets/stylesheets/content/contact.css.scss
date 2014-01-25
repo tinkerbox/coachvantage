@@ -64,7 +64,7 @@
 	text-decoration: none;
 }
 
-#start_session {
+#log_session {
 	margin-left: 20px;
 }
 
@@ -101,14 +101,6 @@
 	display: block;
 	padding: 10px;
 	color: white;	
-}
-
-#client_profile #cp_navbar ul li a:hover {
-	background-color: #2fc0e5;
-}
-
-#client_profile #cp_navbar ul li a:active {
-	background-color: #0282a3;
 }
 
 #cp_navbar {
@@ -171,6 +163,38 @@
 }
 
 .notes_side ul li a.active {
+	font-weight: bold;
+}
+
+#contact_add_doc_form p {
+	font-weight: bold;
+	color: #333;
+}
+
+#contact_add_doc_form p i {
+	color: #8cc10d;
+	font-size: 18px;
+}
+
+#contact_add_doc_form ul {
+	list-style-type: none;
+	padding-left: 5px;
+}
+
+#contact_add_doc_form ul li {
+	text-align: left;
+	margin-bottom: 15px;
+}
+
+#contact_add_doc_form ul li a {
+	border-bottom: 1px dashed #00a2cb;
+}
+
+#contact_add_doc_form ul li a:hover {
+	text-decoration: none;
+}
+
+#contact_add_doc_form ul li a.active {
 	font-weight: bold;
 }
 
@@ -260,6 +284,29 @@
 	padding: 20px 50px;
 }
 
-#session_duration {
-	margin-top: -4px;
+.detail_input {
+	width: 100px;
+}
+
+.detail_caption {
+	margin-left: 13px;
+	margin-top: 5px;
+	margin-right: 10px;
+}
+
+.contact_contract .col-md-3, .contact_contract .col-md-6 {
+	margin-top: 20px;
+}
+
+.contact_contract #contract_submit {
+	margin-top: 30px;
+}
+
+.contact_contract .ffSelectWrapper {
+	margin-top: 0px !important;
+	display: block !important;
+}
+
+#log_session_modal {
+	margin-top: 30px;
 }

@@ -6,25 +6,46 @@
 			= render 'contacts/shownav'
 		.row.contact_description
 			.contact_contract
-				= simple_form_for(:contract, :url => contact_contracts_path(params[:contact_id]), :html => {:method => :put, :class => 'form_horizontal' }) do |f|
-					.col-md-3.col-sm-12
-						.form-group
-							= f.label "Contract Type"
-							= f.select :contract_type, %w[days weeks months years].map{|type|[type.titleize, type]}
-						%br
-						.form-group#session_duration
-							= f.input :session_duration, input_html: {class: "form-control form-control-square"}
-					.col-md-3.col-sm-12
-						.form-group
-							= f.input "No. of Contract", input_html: {class: "form-control form-control-square"}
-						%br
-						.form-group
-							= f.input :billing_arrangement, input_html: {class: "form-control form-control-square"}
-					.col-md-3.col-sm-12
-						.form-group
-							= f.input :start_date, input_html: { class: "form-control form-control-square", value: Time.now.strftime('%d-%m-%Y') }
-						%br
-						.form-group
-							= f.input :fees, input_html: {class: "form-control form-control-square"}
-					.col-md-3.col-sm-12
-						= f.input :end_date, input_html: { class: "form-control form-control-square", value: Time.now.strftime('%d-%m-%Y') }
+				= simple_form_for(:contract, :url => contact_contracts_path(params[:contact_id]), :html => {:method => :post, :class => 'form' }) do |f|
+					.row
+						.col-md-3.col-sm-12
+							.form-group
+								= f.label "Contract Type"
+								= f.select :contract_type, %w[sessions hours].map{|type|[type.titleize, type]}
+						.col-md-3.col-sm-12
+							.form-group
+								= f.input :period, label: "No. of sessions", as: :string, required: true, input_html: {class: "form-control form-control-square"}, label_html: {id: :contract_type_caption}
+						.col-md-3.col-sm-12
+							.form-group
+								= f.label "Start Date"
+								.input-group
+									= f.input_field :start_date, as: :string, class: "form-control form-control-square", value: Time.now.strftime('%d-%m-%Y')
+									%span{class: 'cv_datepicker_btn input-group-addon', id: :date_start_btn}
+										%i.fa.fa-calendar
+						.col-md-3.col-sm-12
+							.form-group
+								= f.label "End Date"
+								.input-group
+									= f.input_field :end_date, as: :string, class: "form-control form-control-square", value: Time.now.strftime('%d-%m-%Y')
+									%span{class: "cv_datepicker_btn input-group-addon", id: :date_end_btn}
+										%i.fa.fa-calendar
+						.col-md-3.col-sm-12
+							.form-group
+								= f.label :session_duration
+								.row
+									= f.input_field :session_duration, required: true, class: "pull-left form-control detail_input form-control-square"
+									%span.detail_caption.pull-left minutes
+						.col-md-3.col-sm-12
+							.form-group
+								= f.label "Billing Arrangement"
+								= f.select :billing_arrangement, options_for_select(["Per Session", "Per Month", "Lump Sum"])
+						.col-md-6.col-sm-12
+							.form-group
+								= f.label :fees
+								.row
+									%span.detail_caption.pull-left $
+									= f.input_field :fees, required: true, class: "form-control detail_input pull-left form-control-square"
+									%span.detail_caption.pull-left#fee_type Per Session
+					.row
+						.col-md-12.form-group.pull-left#contract_submit
+							= f.submit "SAVE CONTRACT", class: 'cv_btn'

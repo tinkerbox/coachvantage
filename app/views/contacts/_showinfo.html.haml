@@ -25,4 +25,41 @@
 .pull-right#action_bar
 	= link_to 'skype:' + @contact.skype_id + '?call' do
 		%i.fa.fa-skype
-	= link_to 'LOG SESSION', '#', class: 'cv_btn', id: 'start_session'
+	= link_to 'LOG SESSION', '#', class: 'cv_btn', 'data-toggle' => 'modal', :href => '#log_session_modal', id: 'log_session'
+
+#log_session_modal.modal.fade
+	= simple_form_for(:sessionlog, :url => add_sessionlog_contact_path(params[:contact_id]), :html => {:method => :post, :class => 'form_horizontal' }) do |f|
+		.col-md-3.col-xs-1
+		.col-md-6.col-xs-10{style: 'background-color: #f3f3f3;'}
+			.modal-header
+				%a.close{"data-dismiss" => "modal"} ×
+				%h3.modal_caption Log Session
+			.modal-body
+				.row
+					.col-md-6.col-xs-12.col-sm-6
+						.form-group
+							= f.label :session_duration
+							.row
+								= f.input_field :duration, required: true, class: "pull-left form-control detail_input form-control-square"
+								%span.detail_caption.pull-left minutes
+					.col-md-6.col-xs-12.col-sm-6
+						.form-group
+							= f.label "Session Date"
+							.input-group
+								= f.input_field :date, as: :string, class: "form-control form-control-square", value: Time.now.strftime('%d-%m-%Y')
+								%span{class: 'cv_datepicker_btn input-group-addon', id: :log_session_date}
+									%i.fa.fa-calendar
+					.col-md-6.col-xs-12.col-sm-6
+						.form-group
+							.form-group
+								= f.label "Billing Status"
+								= f.select :billing_status, options_for_select(["Paid", "Pro bono"])
+					.col-md-6.col-xs-12.col-sm-6
+						.form-group
+							.form-group
+								= f.label "Client Name"
+								= f.input_field :client_name, class: "form-control form-control-square", disabled: true, value: @contact.name
+			.modal-footer
+				= f.submit 'SAVE', class: 'cv_btn'
+				= link_to 'CLOSE', '#', 'data-dismiss' => 'modal', class: 'cv_btn'
+		.col-md-3.col-xs-1

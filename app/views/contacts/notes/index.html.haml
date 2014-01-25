@@ -19,13 +19,15 @@
 								= link_to note.caption, edit_contact_note_path(params[:contact_id], note[:id]), remote: true, class: 'new_note_a_class'
 				%hr
 				#documents
-					%p
-						DOCUMENTS
-						%i.fa.fa-plus-circle
+					= form_for(:document, :url => add_doc_contact_path(params[:contact_id]), :method => :post, :html => {:class => 'form', id: :contact_add_doc_form}) do |f|
+						%p
+							DOCUMENTS
+							%i.fa.fa-plus-circle#upload_document
+						= f.file_field :file, id: :upload_file, style: "display: none;"
 					%ul
-						-2.times do
+						- @documents.each do |doc|
 							%li
-								%a{href: '#'} Payment contract
+								= link_to doc.name, doc.file.url
 			.col-md-9.notes_content
 				= form_for(:note, :url => contact_notes_path(params[:contact_id]), :method => :post, remote: true, :html => {:class => 'form', id: :contact_note_form}) do |f|
 					.form-group

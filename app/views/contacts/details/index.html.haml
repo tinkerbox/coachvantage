@@ -26,7 +26,8 @@
 								= f.select :gender, options_for_select(%w[Male Female], @contact.gender), :required => true
 							.form-group
 								.label.label-select Birthday
-								= f.date_select(:birthday, :order => [:month, :day, :year], start_year: Date.today.year - 5, end_year: Date.today.year - 90)
+								.input-group
+									= f.date_select(:birthday, :order => [:month, :day, :year], start_year: Date.today.year - 5, end_year: Date.today.year - 90)
 							.form-group
 								.label Home Address
 								= f.text_field :home_addr, :placeholder => 'Home Address', class: 'form-control form-control-square'

@@ -13,6 +13,9 @@ class Contact < ActiveRecord::Base
 	belongs_to :user
 
 	has_many :notes
+	has_many :documents
+	has_many :contracts
+	has_many :session_logs
 
 	def name
 		self.first_name + " " + self.last_name

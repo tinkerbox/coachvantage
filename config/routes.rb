@@ -28,6 +28,11 @@ Coachvantage::Application.routes.draw do
   resources :contacts do
     member do
       put :update_contact_info
+      post :add_doc
+      post :add_sessionlog
+    end
+    collection do
+      get :index_by_type
     end
     scope module: 'contacts' do
       resources :notes
